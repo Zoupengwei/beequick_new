@@ -1,0 +1,55 @@
+header {
+    height: 60px;
+    width: 100%;
+    background: #FFD600;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+}
+
+header .left {
+    width: 15%;
+    height: 100%;
+    padding: 10px 0 0 10px;
+}
+
+header .left img {
+    width: 25px;
+    height: 25px;
+}
+
+header .left p {
+    width: 100%;
+}
+
+header .center {
+    width: 70%;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+}
+
+header .center .address {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+header .center .icon-sort-down {
+    font-size: 20px;
+}
+
+header .right {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+header .right img {
+    width: 25px;
+    height: 25px;
+}

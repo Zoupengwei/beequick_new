@@ -1,0 +1,190 @@
+header {
+    width: 100%;
+    height: 172px;
+    background: #FFD600;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+}
+
+header .top {
+    width: 100%;
+    height: 112px;
+    display: flex;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+header .top > img {
+    width: 85px;
+    height: 85px;
+}
+
+header .top-right {
+    width: 60%;
+    padding: 10px 0 0 20px;
+    color: #fff;
+    position: relative;
+}
+
+header .top-right .user-level {
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    font-size: 12px;
+    color: #FD4B42;
+    background: url("../img/logon.png") 0 20% no-repeat;
+    background-size: 90% 60%;
+}
+
+header .top-right .user-level span {
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+header .top-right .more {
+    font-size: 50px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+header .bottom {
+    width: 100%;
+    background: #f3c800;
+    display: flex;
+    text-align: center;
+    padding: 8px 0;
+}
+
+header .bottom .left {
+    width: 50%;
+    height: 80%;
+    color: #fff;
+    border-right: 1px solid #fff;
+    background: url("../img/shangpinshoucang.png") 20% 50% no-repeat;
+    background-size: 15% 100%;
+}
+
+header .bottom .right {
+    width: 50%;
+    height: 80%;
+    color: #fff;
+    background: url("../img/dianpushoucang.png") 20% 50% no-repeat;
+    background-size: 15% 100%;
+}
+
+header .bottom span {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+main {
+    position: absolute;
+    top: 172px;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    overflow: auto;
+}
+
+main .order {
+    width: 100%;
+    height: 146px;
+    background: #fff;
+    margin-top: 20px;
+}
+
+main .order .top {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    color: #666;
+    font-size: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+main .order .top .top-left {
+    width: 61%;
+    padding-left:20px;
+}
+
+main .order .top .top-right .icon-angle-right {
+    font-size: 20px;
+}
+
+main .order .bottom {
+    width: 100%;
+}
+
+main .order .bottom ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+main .order .bottom ul li {
+    width: 25%;
+    line-height: 30px;
+    padding: 25px 0 0 10px;
+    text-align: center;
+    font-size: 13px;
+}
+
+main .order .bottom figure img {
+    width: 20px;
+    height: 20px;
+    margin: auto;
+}
+
+main .core-entry {
+    width: 100%;
+    background: #fff;
+    margin-top: 20px;
+}
+
+main .core-entry ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main .core-entry ul li {
+    text-align: center;
+    width: 25%;
+    height: 112px;
+    border-bottom: 1px solid #ccc;
+    font-size: 13px;
+}
+
+main .core-entry ul li:nth-of-type(5) {
+    border-bottom: none;
+}
+main .core-entry ul li:nth-of-type(6) {
+    border-bottom: none;
+}
+
+main .core-entry ul li a {
+    display: inline-block;
+}
+
+main .core-entry ul li figcaption {
+    margin-top: 5px;
+}
+
+main .core-entry figure img {
+    width: 30px;
+    height: 30px;
+    margin: 35px auto 0;
+}
+
+main .foot {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 40px;
+    background: #fff;
+    text-align: center;
+    color: #666;
+}

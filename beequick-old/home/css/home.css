@@ -1,0 +1,325 @@
+
+.content {
+    position: absolute;
+    top: 60px;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: auto;
+}
+
+.menu {
+    width: 100%;
+    height: 220px;
+    background: #fff;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: center;*/
+    width: 90%;
+    padding-bottom: 20px;
+}
+
+.menu ul li {
+    width: 25%;
+    height: 40%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.menu ul li img {
+    width: 85%;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.menu ul li:nth-of-type(1) img {
+    width: 90%;
+    height: 80px;
+}
+
+.menu ul li:nth-of-type(2) img {
+    width: 100%;
+    height: 80px;
+    margin-left: 10px;
+}
+
+.menu ul li:nth-of-type(3) img {
+    width: 90%;
+    height: 80px;
+    margin-left: 10px;
+}
+
+.menu ul li:nth-of-type(4) img {
+    width: 100%;
+    height: 80px;
+    margin-left: 10px;
+}
+
+.menu ul li:nth-of-type(7) img {
+    margin-left: 10px;
+}
+
+.menu ul li:nth-of-type(8) img {
+    margin-left: 10px;
+}
+
+.menu ul li figcaption {
+    font-size: 14px;
+}
+
+.news {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    margin-top: 20px;
+    display: flex;
+}
+
+.news .left {
+    width: 25%;
+    height: 70%;
+    margin: auto 0;
+    border-right: 1px solid #ccc;
+}
+
+.news .left img {
+    width: 100%;
+    height: 100%;
+}
+
+.news .right {
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+.news .right .title {
+    color: #FF4848;
+    border: 1px solid #FF4848;
+    border-radius: 5px;
+    padding: 0 3px;
+}
+
+.news .right .desc {
+    color: #aFaFaF;
+}
+
+.maiyizengyi {
+    width: 100%;
+    height: 240px;
+    background: #fff;
+    margin-top: 20px;
+    display: flex;
+}
+
+.maiyizengyi > div:not(:nth-last-of-type(1)) {
+    border-right: 1px solid #ccc;
+}
+
+.maiyizengyi > div img {
+    width: 100%;
+    height: 100%;
+}
+
+.tejia {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.tejia > div {
+    width: 49.8%;
+    height: 49.8%;
+    background: #fff;
+}
+
+.tejia .item1, .tejia .item2 {
+    border-bottom: 1px solid #ccc;
+}
+
+.tejia .item1, .tejia .item3 {
+    border-right: 1px solid #ccc;
+}
+
+.tejia .item1 {
+    background: url("http://img01.bqstatic.com/upload/goods/000/000/2470/0000002470.jpg@200w_200h_90Q") no-repeat;
+    background-size: 100% 100%;
+}
+
+.tejia .item2 {
+    background: url("http://img01.bqstatic.com/upload/goods/000/000/2470/0000002470.jpg@200w_200h_90Q") no-repeat;
+    background-size: 100% 100%;
+}
+
+.tejia .item3 {
+    background: url("http://img01.bqstatic.com/upload/goods/000/000/2470/0000002470.jpg@200w_200h_90Q") no-repeat;
+    background-size: 100% 100%;
+}
+
+.tejia .item4 {
+    background: url("http://img01.bqstatic.com/upload/goods/000/000/2470/0000002470.jpg@200w_200h_90Q") no-repeat;
+    background-size: 100% 100%;
+}
+
+.category {
+    width: 100%;
+}
+
+.category .act-category {
+    width: 100%;
+}
+
+.act-category .act-category-item {
+    height: 380px;
+    margin-top: 20px;
+    background: #fff;
+}
+
+.act-category .act-category-item .act-category-item-header {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    display: flex;
+}
+
+.act-category-item-header .left {
+    width: 85%;
+    padding-left: 10px;
+}
+
+.act-category-item-header .left .fangkuai {
+    width: 10px;
+    height: 20px;
+    display: inline-block;
+    background: #F38631;
+}
+
+.act-category-item-header .left .title {
+    display: inline-block;
+    font-size: 15px;
+    color: #F38631;
+    margin-left: 5px;
+}
+
+.act-category-item-header .right {
+    width: 15%;
+    height: 100%;
+}
+
+.act-category-item-header .right span {
+    display: inline-block;
+    font-size: 13px;
+    color: #666;
+}
+
+.act-category-item-header .right img {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+
+.act-category .act-category-item .act-category-item-banner {
+    width: 100%;
+    height: 90px;
+    background: url("http://img01.bqstatic.com//upload/activity/2016090718042575.jpg@90Q.jpg") center top no-repeat;
+    background-size: 94%;
+}
+
+.act-category-item-goodList {
+    width: 100%;
+    height: 215px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.act-category-item-goodList .product-item {
+    width: 33.4%;
+    text-align: left;
+    border-right: 1px solid #ccc;
+    padding: 0 10px;
+}
+
+.act-category-item-goodList li:nth-last-of-type(1) {
+    border-right: none;
+}
+
+.product-item .pic {
+    width: 100%;
+    height: 108px;
+    background: url("http://img01.bqstatic.com/upload/goods/000/009/7049/0000097049_25480.jpg@200w_200h_90Q") no-repeat;
+    background-size: 100% 100%;
+}
+
+.product-item .pro-title {
+    font-size: 14px;
+    line-height: 2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.product-item .discout {
+    width: 100%;
+}
+
+.product-item .jingxuan {
+    display: inline-block;
+    color: #FF0000;
+    border: 1px solid #FF0000;
+    border-radius: 5px;
+    padding: 0 3px;
+}
+
+.product-item .huodong {
+    display: inline-block;
+    color: #ffffff;
+    background: #FF0000;
+    border-radius: 5px;
+    padding: 0 5px;
+    margin-left: 5px;
+}
+
+.product-item .pro-desc {
+    width: 100%;
+    line-height: 2;
+    position: relative;
+}
+
+.product-item .pro-desc .specification {
+    color: #999;
+    width: 100%;
+}
+
+.product-item .pro-desc .price {
+    color: #ff3800;
+    display: inline-block;
+}
+
+.product-item .pro-desc .price .pass-price {
+    color: #ccc;
+    text-decoration: line-through;
+}
+
+.product-item .pro-desc .add {
+    display: inline-block;
+    color: rgb(255, 67, 0);
+    font-size: 16px;
+    border: 1px solid rgb(255, 67, 0);
+    padding: 8px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+}
+
+
