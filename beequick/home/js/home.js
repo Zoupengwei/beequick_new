@@ -43,7 +43,7 @@ define(["jquery", "swiper", "weChat"], function ($, swiper, wx) {
                 $(".content>.menu ul").html(menuHtml);
 
                 //绑定扫一扫
-                $("header .left").on('click',function () {
+                $("header .left").on('click', function () {
                     scan();
                 });
             });
@@ -76,8 +76,9 @@ define(["jquery", "swiper", "weChat"], function ($, swiper, wx) {
                         <div class="discout"><span class="jingxuan">精选</span>
                         <span class="huodong">${data[i].pm_desc}</span></div>
                         <div class="pro-desc"><p class="specification">
-                        ${data[i].specifics}</p><p class="price">¥
-                        ${data[i].price} <span class="pass-price">¥
+                        ${data[i].specifics}</p><p class="price">
+                        <sapn class="now-price">¥${data[i].price}</sapn>
+                        <span class="pass-price">¥
                         ${data[i].market_price}</span></p>
                         <span class="add icon-plus"></span></div></li>
                         `;
@@ -89,25 +90,68 @@ define(["jquery", "swiper", "weChat"], function ($, swiper, wx) {
                         html = '';
                     }
                 }
+                changeNum($(".add"), 1);
             });
     };
 
+    var objArr = [];
+    //添加按钮绑定
+    function changeNum(btn, value) {
+        for (let i = 0; i < btn.length; i++) {
+            btn.eq(i).on("click", function () {
+                $(".totalNum").html($(".totalNum").html() * 1 + value);
+
+                //获取背景图片的url,注意结果是带有引号的
+                var urlStr = $(".pic").eq(i).css("backgroundImage").toString().split("(")[1].split(")")[0];
+                console.log(urlStr);
+
+                //封装每个商品对象
+                var proObj = {
+                    name: $(".pro-title").eq(i).html(),
+                    price: $(".now-price").eq(i).html(),
+                    imgSrc: urlStr,
+                    num: 1,
+                };
+
+                if (value > 0) {
+                    //把对象存入数组
+                    objArr.push(proObj);
+                } else {
+                    objArr.pop(proObj);
+                }
+
+                //序列化后存入sessionStorage
+                var proInfoStr = JSON.stringify(objArr);
+                window.sessionStorage.setItem('newObjArr', proInfoStr);
+
+                //控制总数的显示隐藏
+                if ($(".totalNum").html() == 0) {
+                    $(".totalNum").hide();
+                } else {
+                    $(".totalNum").show();
+                }
+            });
+        }
+        ;
+    }
+
+
     //微信配置
     wx.config({
-     debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-     appId: '<?php echo $signPackage["appId"];?>', // 必填，公众号的唯一标识
-     timestamp: '<?php echo $signPackage["timestamp"];?>', // 必填，生成签名的时间戳
-     nonceStr: '<?php echo $signPackage["nonceStr"];?>', // 必填，生成签名的随机串
-     signature: '<?php echo $signPackage["signature"];?>',// 必填，签名，见附录1
-     jsApiList: ['scanQRCode'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: '<?php echo $signPackage["appId"];?>', // 必填，公众号的唯一标识
+        timestamp: '<?php echo $signPackage["timestamp"];?>', // 必填，生成签名的时间戳
+        nonceStr: '<?php echo $signPackage["nonceStr"];?>', // 必填，生成签名的随机串
+        signature: '<?php echo $signPackage["signature"];?>',// 必填，签名，见附录1
+        jsApiList: ['scanQRCode'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
 
-     });
+    });
 
     //扫一扫的接口函数
     function scan() {
         wx.scanQRCode({
             needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
-            scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+            scanType: ["qrCode", "barCode"], // 可以指定扫二维码还是一维码，默认二者都有
             success: function (res) {
                 var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
             },

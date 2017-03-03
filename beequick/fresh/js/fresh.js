@@ -30,11 +30,14 @@ define(["jquery"], function ($) {
                 }
 
                 $("main .selection-fruits .fruits-list").html(html);
+
+                //添加到购物车的函数
+                changeNum($(".addCar"), 1);
             }
         });
     }
 
-    //绑定点击事件
+    //绑定标题切换的点击事件
     function clickFn() {
         $(".select-tag-list li").click(function () {
             //切换样式
@@ -44,6 +47,21 @@ define(["jquery"], function ($) {
             $(".selection-fruits .list-title").html($(this).find("a").html());
             // getData();
         });
+    }
+
+    //绑定添加购物车的点击事件
+    function changeNum(btn, value) {
+        for (var i in btn) {
+            btn.eq(i).on("click", function () {
+                $(".totalNum").html($(".totalNum").html() * 1 + value);
+                //控制总数的显示隐藏
+                if ($(".totalNum").html == 0) {
+                    $(".totalNum").hide();
+                } else {
+                    $(".totalNum").show();
+                }
+            });
+        }
     }
 
     return obj;
