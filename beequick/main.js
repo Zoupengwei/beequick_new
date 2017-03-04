@@ -10,7 +10,9 @@ require.config({
         "underscore":   "public/lib/underscore.min",
         "text":         "public/lib/text",
         "swiper":       "public/lib/swiper-3.3.1.min",
-        "router":       "./router"
+        "router":       "./router",
+        "public":       "public/js/public",
+        "lazy":         "public/lib/jquery.lazyload",
     }
 });
 

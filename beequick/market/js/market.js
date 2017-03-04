@@ -2,9 +2,8 @@
  * Created by Auser on 2017/3/1.
  */
 
-
-define(["jquery"],
-    function ($) {
+define(["jquery", "public"],
+    function ($, pub) {
         var obj = {};
 
         //ajax请求数据
@@ -23,8 +22,8 @@ define(["jquery"],
                     for (var i in data) {
                         html += '<dd class="goods-items">' +
                             '<a href="javascript:;">' +
-                            '<img class="product-image" src=' + data[i].img +
-                            '/><p class="p-title p-ellipsis">' + data[i].name +
+                            '<img class="product-image" data-src=' + data[i].img + ' src=' + data[i].img +
+                            ' /><p class="p-title p-ellipsis">' + data[i].name +
                             '</p><p class="tag"><span class="p-tag selection">精选</span>' +
                             '<span class="p-tag gift">' + data[i].pm_desc +
                             '</span></p><p class="p-intro p-ellipsis">' + data[i].specifics +
@@ -34,9 +33,15 @@ define(["jquery"],
                     }
 
                     $("main .goods-list .allItem").html(html);
+                    var addData = JSON.parse(localStorage.address);
+                    $(".position").html(addData.district + " " + addData.street);
 
                     changeNum($(".add-goods"), 1);
                     changeNum($(".minus-goods"), -1);
+
+                    //懒加载
+                    pub.loadPic($(".goods-list"));
+                    pub.lazyLoad($(".goods-list"), $(".allItem"));
                 });
         }
 
@@ -86,9 +91,10 @@ define(["jquery"],
                      window.sessionStorage.setItem('newObjArr', proInfoStr);*/
 
                     //存入sessionStorage
-                    require(['./public/js/public'], function (ctrl) {
-                        ctrl.savePro(name, price, imgSrc, num, value);
-                    });
+                    /*require(['./public/js/public'], function (ctrl) {
+                     ctrl.savePro(name, price, imgSrc, num, value);
+                     });*/
+                    pub.savePro(name, price, imgSrc, num, value);
 
 
                     //控制删除按钮的显示隐藏
@@ -105,7 +111,6 @@ define(["jquery"],
                     } else {
                         $(".totalNum").show();
                     }
-
                 });
             }
         }

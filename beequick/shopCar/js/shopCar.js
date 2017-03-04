@@ -26,6 +26,9 @@ define(["jquery"], function ($) {
                 if ($num.html() == 0) {
                     $(this).parent().parent().parent().parent().remove();
                     //还需要删除sessionStorage中的
+                    for(var i in window.sessionStorage){
+
+                    }
                 }
 
                 //当购物车总数为0时，切换页面
@@ -98,9 +101,7 @@ define(["jquery"], function ($) {
                 } else {
                     $totalPrice.html($totalPrice.html()*1 - itemPrice);
                 }
-            })
-
-
+            });
         }
     }
 

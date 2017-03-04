@@ -8,6 +8,8 @@ define(["jquery"], function ($) {
     var objArr = [];
 
     obj.savePro = savePro;
+    obj.lazyLoad = lazyLoad;
+    obj.loadPic = loadPic;
 
     //保存购物车数据到sessionStorage
     function savePro(name, price, imgSrc, num, value) {
@@ -32,8 +34,26 @@ define(["jquery"], function ($) {
     }
 
     //懒加载
-    function lazy(obj1, obj2) {
+    function lazyLoad(obj1, obj2) {
+        var imgs = obj1.find("[data-src]");
 
+        obj2.on("onscroll", function () {
+            loadPic(obj1);
+        });
+    }
+
+    //导入懒加载的图片
+    function loadPic(obj) {
+        //获取需要进行懒加载的图片，带有属性data-src
+        var imgs = obj.find("[data-src]");
+        //获取屏幕高度
+        var height = obj.height;
+        for (var i = 0; i < imgs.length; i++) {
+            var $imgs = $(imgs[i]);
+            if ($imgs.offset().top < height) {
+                $imgs.attr("src", $imgs.attr("data-src"));
+            }
+        }
     }
 
     return obj;

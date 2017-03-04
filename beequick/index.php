@@ -14,6 +14,8 @@ $signPackage = $jssdk->GetSignPackage();
     <link rel="stylesheet" href="./public/css/footer.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./public/css/swiper-3.3.1.min.css">
+
+    <script charset="utf-8" src="http://api.map.baidu.com/api?v=2.0&ak=7ddQqdOKgdhyfZ6DOm7AQdpUHsW2uvQE"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 
     <title>爱鲜蜂</title>
@@ -72,6 +74,7 @@ $signPackage = $jssdk->GetSignPackage();
 
         </ul>
     </footer>
+
     <script>
         wx.config({
                 debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
@@ -79,9 +82,9 @@ $signPackage = $jssdk->GetSignPackage();
                 timestamp: <?php echo $signPackage["timestamp"];?>, // 必填，生成签名的时间戳
                 nonceStr: '<?php echo $signPackage["nonceStr"];?>', // 必填，生成签名的随机串
                 signature: '<?php echo $signPackage["signature"];?>',// 必填，签名，见附录1
-                jsApiList: ['scanQRCode'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-
+                jsApiList: ['scanQRCode','getLocation'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
             });
+
     </script>
 
     <script src="public/lib/require.js" data-main="main"></script>

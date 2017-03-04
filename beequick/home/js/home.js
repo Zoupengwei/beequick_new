@@ -11,19 +11,21 @@ define(["jquery", "swiper"], function ($, swiper) {
             function (req) {
                 // console.log(req);
                 var data = JSON.parse(req);
-
                 var slide = data.data.slide;
                 var sipwerHtml = '';
+
                 //获取轮播图的数据
                 for (var i in slide) {
                     sipwerHtml += '<li class="swiper-slide"><img src=' + slide[i].activity.img + ' /></li>';
                 }
                 $(".banner ul").html(sipwerHtml);
+
                 //启动轮播
                 swipe();
 
                 var menu = data.data.menu;
                 var menuHtml = '';
+
                 //获取菜单的数据
                 for (var i in menu) {
                     if (i == 1) {
@@ -42,10 +44,19 @@ define(["jquery", "swiper"], function ($, swiper) {
                 }
                 $(".content>.menu ul").html(menuHtml);
 
+                getLoc();
+                var addData = JSON.parse(localStorage.address);
+                $(".address").html(addData.district + " " + addData.street);
+
                 //绑定扫一扫
                 $("#scan").on('click', function () {
                     scan();
                 });
+
+                //绑定获取地理位置
+                // $("#location").on('click', function () {
+                //
+                // });
             });
     };
 
@@ -113,22 +124,22 @@ define(["jquery", "swiper"], function ($, swiper) {
 
                 //封装每个商品对象
                 /*var proObj = {
-                    name: $(".pro-title").eq(i).html(),
-                    price: $(".now-price").eq(i).html(),
-                    imgSrc: urlStr,
-                    num: 1,
-                };
+                 name: $(".pro-title").eq(i).html(),
+                 price: $(".now-price").eq(i).html(),
+                 imgSrc: urlStr,
+                 num: 1,
+                 };
 
-                if (value > 0) {
-                    //把对象存入数组
-                    objArr.push(proObj);
-                } else {
-                    objArr.pop(proObj);
-                }
+                 if (value > 0) {
+                 //把对象存入数组
+                 objArr.push(proObj);
+                 } else {
+                 objArr.pop(proObj);
+                 }
 
-                //序列化后存入sessionStorage
-                var proInfoStr = JSON.stringify(objArr);
-                window.sessionStorage.setItem('newObjArr', proInfoStr);*/
+                 //序列化后存入sessionStorage
+                 var proInfoStr = JSON.stringify(objArr);
+                 window.sessionStorage.setItem('newObjArr', proInfoStr);*/
 
                 //控制总数的显示隐藏
                 if ($(".totalNum").html() == 0) {
@@ -152,44 +163,64 @@ define(["jquery", "swiper"], function ($, swiper) {
         });
     }
 
+    //获取地址的接口
+    function getLoc() {
 
+        wx.getLocation({
+            type: 'gcj02', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+            success: function (res) {
+                var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+                var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+                var speed = res.speed; // 速度，以米/每秒计
+                var accuracy = res.accuracy; // 位置精度
 
-    /*wx.ready(function () {
-        var scan = $("#scan");
-        scan.on("click", function () {
-            wx.scanQRCode({
-                needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
-                scanType: ["qrCode", "barCode"], // 可以指定扫二维码还是一维码，默认二者都有
-                success: function (res) {
-                    var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
-                },
-            });
+                var locationArr = gcj02tobd09(longitude, latitude);
+                latitude = locationArr[1];
+                longitude = locationArr[0];
+                get_address(latitude, longitude);
+            },
         });
-    })*/
 
-    //获取地理位置
-    /*wx.ready(function () {
-        var locat = $("header .center").on("click", function () {
-            wx.getLocation({
-                type: 'gcj02', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
-                success: function (res) {
-                    var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
-                    var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
-                    var speed = res.speed; // 速度，以米/每秒计
-                    var accuracy = res.accuracy; // 位置精度
+    }
 
-                    wx.openLocation({
-                        latitude: 0, // 纬度，浮点数，范围为90 ~ -90
-                        longitude: 0, // 经度，浮点数，范围为180 ~ -180。
-                        name: '', // 位置名
-                        address: '', // 地址详情说明
-                        scale: 1, // 地图缩放级别,整形值,范围从1~28。默认为最大
-                        infoUrl: '' // 在查看位置界面底部显示的超链接,可点击跳转
-                    });
-                },
-            });
+    //bd09坐标转换具体地址函数
+    function get_address(lat, lng) {
+        var point = new BMap.Point(lng, lat);
+        var geoc = new BMap.Geocoder();
+
+        geoc.getLocation(point, function (rs) {
+            var addComp = rs.addressComponents;
+            var o = {
+//				province:addComp.province,
+//				city:addComp.city,
+                district: addComp.district,
+                street: addComp.street,
+//				streetNumber:addComp.streetNumber
+            }
+            address = JSON.stringify(o);
+            //位置信息存储到本地，后面的页面调用；
+            localStorage.address = address;
         });
-    });*/
+
+    };
+
+    //定义一些常量
+    var x_PI = 3.14159265358979324 * 3000.0 / 180.0;
+    var PI = 3.1415926535897932384626;
+    var a = 6378245.0;
+    var ee = 0.00669342162296594323;
+
+    /**
+     * 火星坐标系 (GCJ-02) 与百度坐标系 (BD-09) 的转换
+     * 即谷歌、高德 转 百度
+     */
+    function gcj02tobd09(lng, lat) {
+        var z = Math.sqrt(lng * lng + lat * lat) + 0.00002 * Math.sin(lat * x_PI);
+        var theta = Math.atan2(lat, lng) + 0.000003 * Math.cos(lng * x_PI);
+        var bd_lng = z * Math.cos(theta) + 0.0065;
+        var bd_lat = z * Math.sin(theta) + 0.006;
+        return [bd_lng, bd_lat]
+    }
 
     return obj;
 });
