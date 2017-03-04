@@ -3,5 +3,5 @@
  */
 
 define(["jquery"],function ($) {
-    $("")
+
 });

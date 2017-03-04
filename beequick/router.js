@@ -37,9 +37,9 @@ define(["jquery", "underscore", "backbone"],
 
                     $("footer li:nth-last-of-type(1) figure img").attr("src", "./public/img/my.png");
                     $("footer li:nth-of-type(1) figure img").attr("src", "./public/img/home.png");
+                    $("footer li:nth-of-type(2) figure img").attr("src", "./public/img/foudre.png");
                     $("footer li:nth-of-type(3) figure img").attr("src", "./public/img/order.png");
                     $("footer li:nth-of-type(4) figure img").attr("src", "./public/img/shop.png");
-                    $("footer li:nth-of-type(2) figure img").attr("src", "./public/img/foudre.png");
 
                 });
             },
@@ -53,11 +53,11 @@ define(["jquery", "underscore", "backbone"],
                     //模拟点击事件，让一加载页面就有数据显示
                     $(".goods-category-list li:eq(0)").trigger('click');
 
-                    $("footer li:nth-of-type(2) figure img").attr("src", "./public/img/foudre2.png");
-                    $("footer li:nth-of-type(4) figure img").attr("src", "./public/img/shop.png");
                     $("footer li:nth-last-of-type(1) figure img").attr("src", "./public/img/my.png");
                     $("footer li:nth-of-type(1) figure img").attr("src", "./public/img/home2.png");
+                    $("footer li:nth-of-type(2) figure img").attr("src", "./public/img/foudre2.png");
                     $("footer li:nth-of-type(3) figure img").attr("src", "./public/img/order.png");
+                    $("footer li:nth-of-type(4) figure img").attr("src", "./public/img/shop.png");
                 });
             },
 
@@ -70,9 +70,9 @@ define(["jquery", "underscore", "backbone"],
 
                     $("footer li:nth-last-of-type(1) figure img").attr("src", "./public/img/my.png");
                     $("footer li:nth-of-type(1) figure img").attr("src", "./public/img/home2.png");
+                    $("footer li:nth-of-type(2) figure img").attr("src", "./public/img/foudre.png");
                     $("footer li:nth-of-type(3) figure img").attr("src", "./public/img/order2.png");
                     $("footer li:nth-of-type(4) figure img").attr("src", "./public/img/shop.png");
-                    $("footer li:nth-of-type(2) figure img").attr("src", "./public/img/foudre.png");
                 });
             },
 
@@ -81,14 +81,14 @@ define(["jquery", "underscore", "backbone"],
                 require(["text!./shopCar/shopCar.html", "./shopCar/js/shopCar"], function (tpl, ctrl) {
                     $("#content").html(tpl);
                     ctrl.getData();
-                    ctrl.changeNum($(".add"), 1);
-                    ctrl.changeNum($(".reduce"), -1);
+                    // ctrl.changeNum($(".add"), 1);
+                    // ctrl.changeNum($(".reduce"), -1);
 
-                    $("footer li:nth-of-type(4) figure img").attr("src", "./public/img/shop2.png");
                     $("footer li:nth-last-of-type(1) figure img").attr("src", "./public/img/my.png");
                     $("footer li:nth-of-type(1) figure img").attr("src", "./public/img/home2.png");
-                    $("footer li:nth-of-type(3) figure img").attr("src", "./public/img/order.png");
                     $("footer li:nth-of-type(2) figure img").attr("src", "./public/img/foudre.png");
+                    $("footer li:nth-of-type(3) figure img").attr("src", "./public/img/order.png");
+                    $("footer li:nth-of-type(4) figure img").attr("src", "./public/img/shop2.png");
                 });
             },
 
@@ -100,10 +100,10 @@ define(["jquery", "underscore", "backbone"],
                     $("footer").show();
 
                     $("footer li:nth-last-of-type(1) figure img").attr("src", "./public/img/my2.png");
+                    $("footer li:nth-of-type(1) figure img").attr("src", "./public/img/home2.png");
+                    $("footer li:nth-of-type(2) figure img").attr("src", "./public/img/foudre.png");
                     $("footer li:nth-of-type(3) figure img").attr("src", "./public/img/order.png");
                     $("footer li:nth-of-type(4) figure img").attr("src", "./public/img/shop.png");
-                    $("footer li:nth-of-type(2) figure img").attr("src", "./public/img/foudre.png");
-                    $("footer li:nth-of-type(1) figure img").attr("src", "./public/img/home2.png");
 
                 });
             },

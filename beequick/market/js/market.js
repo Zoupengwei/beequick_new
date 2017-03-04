@@ -52,8 +52,6 @@ define(["jquery"],
             });
         }
 
-        //存储每个商品对象的数组
-        var objArr = [];
         //添加和删除按钮的点击事件
         function changeNum(btn, value) {
 
@@ -63,24 +61,35 @@ define(["jquery"],
                     $(".num").eq(i).html($(".num").eq(i).html() * 1 + value);
                     $(".totalNum").html($(".totalNum").html() * 1 + value);
 
+                    var name = $(".p-title").eq(i).html();
+                    var price = $(".p-price").eq(i).html();
+                    var imgSrc = $(".product-image").eq(i).attr("src");
+                    var num = $(".num").eq(i).html() * 1;
+
                     //封装每个商品对象
-                    var proObj = {
-                        name: $(".p-title").eq(i).html(),
-                        price: $(".p-price").eq(i).html(),
-                        imgSrc: $(".product-image").eq(i).attr("src"),
-                        num: $(".num").eq(i).html() * 1,
-                    };
+                    /*var proObj = {
+                     name: $(".p-title").eq(i).html(),
+                     price: $(".p-price").eq(i).html(),
+                     imgSrc: $(".product-image").eq(i).attr("src"),
+                     num: $(".num").eq(i).html() * 1,
+                     };
 
-                    if (value > 0) {
-                        //把对象存入数组
-                        objArr.push(proObj);
-                    } else {
-                        objArr.pop(proObj);
-                    }
+                     if (value > 0) {
+                     //把对象存入数组
+                     objArr.push(proObj);
+                     } else {
+                     objArr.pop(proObj);
+                     }
 
-                    //序列化后存入sessionStorage
-                    var proInfoStr = JSON.stringify(objArr);
-                    window.sessionStorage.setItem('newObjArr', proInfoStr);
+                     //序列化后存入sessionStorage
+                     var proInfoStr = JSON.stringify(objArr);
+                     window.sessionStorage.setItem('newObjArr', proInfoStr);*/
+
+                    //存入sessionStorage
+                    require(['./public/js/public'], function (ctrl) {
+                        ctrl.savePro(name, price, imgSrc, num, value);
+                    });
+
 
                     //控制删除按钮的显示隐藏
                     if ($(".num").eq(i).html() == 0) {

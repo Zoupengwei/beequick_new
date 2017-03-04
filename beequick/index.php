@@ -1,84 +1,91 @@
 <?php
 require_once("jssdk.php");
-$jssdk = new jssdk("wx3b5019935778a513", "d0bfce2ecd1ce5e9fe17a78124a3d5bd");
+$jssdk = new jssdk("wx3b5019935778a513", "1c1f5abeb6512a79080aefc2bc076537");
 $signPackage = $jssdk->GetSignPackage();
 ?>
 
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8"/>
-		<title>微信开发</title>
-		<meta name="viewport" content="width=device-width" />
-		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-		<style type="text/css">
-			button{
-				width: 80%;
-				height: 40px;
-				background: green;
-				color: #fff;
-				border-radius: 5px;
-			}
-		</style>
-	</head>
-	<body>
-		<button onclick="test()">
-			点击拍照
-		</button>
-		<button onclick="code()">
-			点击扫码
-		</button>
-		<div id="img">
-			
-		</div>
-		<script type="text/javascript">
-			wx.config({
-				debug: true, // 用于调试，如果为true每进行一次操作都会弹出
-				appId: '<?php echo $signPackage["appId"];?>', // 必填，公众号的唯一标识
-				timestamp: <?php echo $signPackage["timestamp"];?>, // 必填，生成签名的时间戳
-				nonceStr: '<?php echo $signPackage["nonceStr"];?>', // 必填，生成签名的随机串
-				signature: '<?php echo $signPackage["signature"];?>',// 必填，签名，见附录1
-				jsApiList: [
-					'checkJsApi',
-			        'onMenuShareTimeline',
-			        'onMenuShareAppMessage',
-			        'onMenuShareQQ',
-			        'onMenuShareWeibo',
-			        'onMenuShareQZone',
-			        'hideMenuItems',
-			        'showMenuItems',
-			        'hideAllNonBaseMenuItem',
-			        'showAllNonBaseMenuItem',
-			        'translateVoice',
-			        'startRecord',
-			        'stopRecord',
-			        'onVoiceRecordEnd',
-			        'playVoice',
-			        'onVoicePlayEnd',
-			        'pauseVoice',
-			        'stopVoice',
-			        'uploadVoice',
-			        'downloadVoice',
-			        'chooseImage',
-			        'previewImage',
-			        'uploadImage',
-			        'downloadImage',
-			        'getNetworkType',
-			        'openLocation',
-			        'getLocation',
-			        'hideOptionMenu',
-			        'showOptionMenu',
-			        'closeWindow',
-			        'scanQRCode',
-			        'chooseWXPay',
-			        'openProductSpecificView',
-			        'addCard',
-			        'chooseCard',
-			        'openCard'
-				] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-			});
-			
-		</script>
-	</body>
-</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 
+    <link rel="stylesheet" href="./public/css/reset.css">
+    <link rel="stylesheet" href="./public/css/footer.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./public/css/swiper-3.3.1.min.css">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+
+    <title>爱鲜蜂</title>
+</head>
+
+<body>
+    <div id="content"></div>
+
+    <footer>
+        <ul>
+            <li>
+                <a href="#home">
+                    <figure>
+                        <img src="./public/img/home.png" alt="">
+                        <figcaption>首页</figcaption>
+                    </figure>
+                </a>
+            </li>
+
+            <li>
+                <a href="#market">
+                    <figure>
+                        <img src="./public/img/foudre.png" alt="">
+                        <figcaption>闪送超市</figcaption>
+                    </figure>
+                </a>
+            </li>
+
+            <li>
+                <a href="#fresh">
+                    <figure>
+                        <img src="./public/img/order.png" alt="">
+                        <figcaption>新鲜预订</figcaption>
+                    </figure>
+                </a>
+            </li>
+
+            <li>
+                <a href="#shopCar">
+                    <figure>
+                        <img src="./public/img/shop.png" alt="">
+                        <figcaption>购物车</figcaption>
+                    </figure>
+                </a>
+                <span class="totalNum"></span>
+            </li>
+
+            <li>
+                <a href="#personal">
+                    <figure>
+                        <img src="./public/img/my.png" alt="">
+                        <figcaption>我的</figcaption>
+                    </figure>
+                </a>
+            </li>
+
+        </ul>
+    </footer>
+    <script>
+        wx.config({
+                debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                appId: '<?php echo $signPackage["appId"];?>', // 必填，公众号的唯一标识
+                timestamp: <?php echo $signPackage["timestamp"];?>, // 必填，生成签名的时间戳
+                nonceStr: '<?php echo $signPackage["nonceStr"];?>', // 必填，生成签名的随机串
+                signature: '<?php echo $signPackage["signature"];?>',// 必填，签名，见附录1
+                jsApiList: ['scanQRCode'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+
+            });
+    </script>
+
+    <script src="public/lib/require.js" data-main="main"></script>
+
+</body>
+
+</html>

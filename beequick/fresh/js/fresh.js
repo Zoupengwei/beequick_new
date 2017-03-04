@@ -6,7 +6,6 @@ define(["jquery"], function ($) {
     obj.getData = getData;
     obj.clickFn = clickFn;
 
-
     //获取数据的函数
     function getData() {
         $.ajax({
@@ -20,10 +19,10 @@ define(["jquery"], function ($) {
                 var html = '';
                 for (var i in product) {
                     html += '<li class="fruits-item">' +
-                        '<p class="p-pic" href="javascript:;">' +
-                        '<img src=' + product[i].img + '/></a></p>' +
+                        '<a class="p-pic" href="javascript:;">' +
+                        '<img src=' + product[i].img + '/></a>' +
                         '<a href="javascript:;"><p class="p-intro">' +
-                        product[i].name + '</a></p>' +
+                        product[i].name + '</p></a>' +
                         '<p class="p-price">￥<em>' + product[i].price +
                         '</em></p><a class="addCar" href="javascript:;">' +
                         '<span class="icon-font"></span></a></li>';
@@ -32,7 +31,7 @@ define(["jquery"], function ($) {
                 $("main .selection-fruits .fruits-list").html(html);
 
                 //添加到购物车的函数
-                changeNum($(".addCar"), 1);
+                changeNum($(".addCar span"), 1);
             }
         });
     }
@@ -52,8 +51,22 @@ define(["jquery"], function ($) {
     //绑定添加购物车的点击事件
     function changeNum(btn, value) {
         for (var i in btn) {
+            //解决闭包
+            let j = i;
             btn.eq(i).on("click", function () {
                 $(".totalNum").html($(".totalNum").html() * 1 + value);
+
+                //获取商品信息
+                var name = $(".p-intro").eq(j).html();
+                var price = $(".p-price").eq(j).html();
+                var imgSrc = $(".p-pic >img").eq(j).attr("src");
+                var num = 1;
+
+                //存入sessionStorage
+                require(['./public/js/public'], function (ctrl) {
+                    ctrl.savePro(name, price, imgSrc, num, value);
+                });
+
                 //控制总数的显示隐藏
                 if ($(".totalNum").html == 0) {
                     $(".totalNum").hide();

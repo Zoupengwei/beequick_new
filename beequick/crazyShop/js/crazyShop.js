@@ -30,7 +30,6 @@ define(["jquery"], function ($) {
 
             }
         });
-
     }
 
     return obj;
