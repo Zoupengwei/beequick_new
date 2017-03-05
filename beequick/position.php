@@ -10,8 +10,6 @@ $signPackage = $jssdk->GetSignPackage();
     <meta charset="UTF-8">
     <title>定位</title>
     <link rel="stylesheet" href="./public/css/reset.css">
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-    <script src="./public/lib/jquery-2.2.3.js"></script>
 
     <style type="text/css">
         body{
@@ -60,6 +58,10 @@ $signPackage = $jssdk->GetSignPackage();
     <p>定位中</p>
 </div>
 </body>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="./public/lib/jquery-2.2.3.js"></script>
+
 <script type="text/javascript">
         $.ajax({
             type: "get",

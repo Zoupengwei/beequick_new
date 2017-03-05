@@ -15,16 +15,10 @@ $signPackage = $jssdk->GetSignPackage();
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./public/css/swiper-3.3.1.min.css">
 
-    <script charset="utf-8" src="http://api.map.baidu.com/api?v=2.0&ak=7ddQqdOKgdhyfZ6DOm7AQdpUHsW2uvQE"></script>
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-
     <title>爱鲜蜂</title>
 </head>
 
 <body>
-
-
-
     <div id="content"></div>
 
     <footer>
@@ -77,6 +71,9 @@ $signPackage = $jssdk->GetSignPackage();
 
         </ul>
     </footer>
+
+    <script charset="utf-8" src="http://api.map.baidu.com/api?v=2.0&ak=7ddQqdOKgdhyfZ6DOm7AQdpUHsW2uvQE"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 
     <script>
         wx.config({
