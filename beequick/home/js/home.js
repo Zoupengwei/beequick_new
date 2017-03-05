@@ -44,19 +44,18 @@ define(["jquery", "swiper"], function ($, swiper) {
                 }
                 $(".content>.menu ul").html(menuHtml);
 
-                getLoc();
-                var addData = JSON.parse(localStorage.address);
-                $(".address").html(addData.district + " " + addData.street);
+                //判断是否获取地理位置，没有的话就获取
+                if (!$(".address").html()) {
+                    getLoc();
+                    var addData = JSON.parse(localStorage.address);
+                    $(".address").html(addData.district + " " + addData.street);
+                }
 
                 //绑定扫一扫
                 $("#scan").on('click', function () {
                     scan();
                 });
 
-                //绑定获取地理位置
-                // $("#location").on('click', function () {
-                //
-                // });
             });
     };
 

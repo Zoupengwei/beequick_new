@@ -33,8 +33,11 @@ define(["jquery", "public"],
                     }
 
                     $("main .goods-list .allItem").html(html);
-                    var addData = JSON.parse(localStorage.address);
-                    $(".position").html(addData.district + " " + addData.street);
+                    //获取地理位置
+                    if (!$(".position").html()) {
+                        var addData = JSON.parse(localStorage.address);
+                        $(".position").html(addData.district + " " + addData.street);
+                    }
 
                     changeNum($(".add-goods"), 1);
                     changeNum($(".minus-goods"), -1);

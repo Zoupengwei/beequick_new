@@ -22,6 +22,9 @@ $signPackage = $jssdk->GetSignPackage();
 </head>
 
 <body>
+
+
+
     <div id="content"></div>
 
     <footer>
