@@ -1,0 +1,42 @@
+body, html, div, ul, li, dl, dd, dt, p, ol,
+h1, h2, h3, h4, h5, h6, figure, figcaption,
+a, blockquote, button, code, em, fieldset,
+form, iframe, img, input, label, object, q,
+small, span, strong, table, tbody, td, th,
+tr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul, li, ol {
+    list-style: none;
+}
+
+html {
+    font-family: STHeiti, Microsoft YaHei, Helvetica, Arial, sans-serif;
+    fontsize: 16px;
+}
+
+img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
+.clearFix:after {
+    content: '';
+    display: block;
+    clear: both;
+    overflow: hidden;
+    height: 0;
+    zoom: 1;
+    visibility: hidden;
+}

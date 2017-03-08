@@ -1,0 +1,122 @@
+/*头部标题栏*/
+header {
+    width: 10rem;
+    height: 50px;
+    background: #d43d3d;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+header .left {
+    width: 1rem;
+    height: 100%;
+    margin-left: 10px;
+}
+
+/*左侧广告按钮*/
+header .left .adBtn {
+    display: block;
+    width: 1rem;
+    height: 100%;
+    background: url("http://s3b.pstatp.com/growth/mobile_list/image/feed_ic_message_normal@3x_f2ea949f120fda7532de30660fd47455.png") 0 50% no-repeat;
+    background-size: 85% 55%;
+}
+
+header .center {
+    width: 8rem;
+    height: 100%;
+}
+
+header .center a {
+    display: inline-block;
+}
+
+/*中间标题*/
+header .center .title {
+    width: 60%;
+    height: 100%;
+    background: url("http://s3.pstatp.com/growth/mobile_list/image/wap_logo@3x_581de69e38eae19e1cc57449a97be10f.png") right no-repeat;
+    background-size: 55% 45%;
+}
+
+/*中间刷新按钮*/
+header .center .refreshBtn {
+    width: 10%;
+    height: 100%;
+    background: url(//s3a.pstatp.com/growth/mobile_list/image/titlebar_refresh_small@3x_96fb31e43870246a450c5812493204bd.png) left center no-repeat;
+    background-size: 55% 35%;
+}
+
+header .right {
+    width: 1rem;
+    height: 100%;
+    margin-right: 10px;
+}
+
+/*右侧搜索按钮*/
+header .right .searchBtn {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(//s3.pstatp.com/growth/mobile_list/image/feed_ic_search_normal@3x_0f198e566fac66cbb016bc72f15d4f39.png) no-repeat 50%;
+    background-size: 70% 60%;
+}
+
+/*顶部导航栏*/
+nav {
+    width: 100%;
+    height: 45px;
+    background: #F4F5F6;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    display: flex;
+    overflow-x: auto;
+}
+
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+nav li {
+    width: 50px;
+    height: 100%;
+    line-height: 45px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+nav li a {
+    display: block;
+    width: 50px;
+    height: 100%;
+    font-size: 18px;
+}
+
+nav li .active {
+    color: #F85959;
+}
+
+nav .addDiv {
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    right: 0;
+    background: #F4F5F6;
+    box-shadow: -2px 0 2px #ccc;
+}
+
+nav .addDiv .addBtn {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(//s3.pstatp.com/growth/mobile_list/image/addred_channel_titlbar@3x_2106879383cd310a182d76e7e234db4c.png) no-repeat 50%;
+    background-size: 50% 50%;
+}
+
+
