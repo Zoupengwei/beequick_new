@@ -40,10 +40,7 @@ header .right {
     line-height: 70px;
     background: #ffffff;
     display: flex;
-    position: absolute;
-    top: 40px;
-    left: 0;
-    right: 0;
+    margin-bottom: 15px;
 }
 
 .friends .left {
@@ -63,10 +60,9 @@ header .right {
 main {
     width: 100%;
     height: 100%;
-    background: #ffffff;
-    margin-top: 15px;
+    /*background: #ffffff;*/
     position: absolute;
-    top: 110px;
+    top: 40px;
     left: 0;
     right: 0;
 }
@@ -75,6 +71,7 @@ main .follow-item {
     width: 100%;
     height: 70px;
     display: flex;
+    background: #ffffff;
     border-bottom: 1px solid #eee;
 }
 

@@ -1,0 +1,125 @@
+body {
+    background: #e9e9e9;
+}
+
+/*头部标题栏*/
+header {
+    width: 100%;
+    height: 50px;
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+    display: flex;
+}
+
+header .left {
+    width: 10%;
+    text-align: center;
+    line-height: 50px;
+}
+
+header .left .icon-xiangzuo {
+    font-size: 20px;
+}
+
+header .center {
+    width: 45%;
+    line-height: 50px;
+    text-align: right;
+}
+
+header .right {
+    width: 40%;
+    line-height: 50px;
+    text-align: right;
+}
+
+header .right a {
+    font-size: 14px;
+}
+
+/*头条活动轮播图*/
+.banner {
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    background: #ffffff;
+    display: flex;
+}
+
+.banner .left {
+    width: 30%;
+    height: 50%;
+    line-height: 35px;
+    margin: auto 0;
+    border-right: 1px solid #cccccc;
+}
+
+.banner .left .toutiao {
+    padding-left: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.banner .left .huodong {
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+}
+
+.banner .right {
+    margin-left: 10px;
+    overflow: hidden;
+}
+
+/*主题内容部分*/
+main {
+    width: 100%;
+    height: 78.5%;
+    position: absolute;
+    margin-top: 15px;
+    background: #ffffff;
+}
+
+main ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main ul li {
+    width: 33.1%;
+    height: 100px;
+    background: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid #cccccc;
+}
+
+main ul li:not(:nth-of-type(3n)) {
+    border-right: 1px solid #cccccc;
+}
+
+main ul li a {
+    font-size: 13px;
+}
+
+main ul li .iconfont {
+    font-size: 36px;
+    display: block;
+    padding-top: 20px;
+}
+
+main ul li .icon-temaishixin {
+    color: #Df3D3f;
+}
+
+main ul li .icon-dianyingpiao {
+    color: deepskyblue;
+}
+
+main ul li .icon-ai-hongbao1 {
+    color: #D43D3D;
+}
+
+main ul li .icon-dingdan1 {
+    color: deepskyblue;
+}
