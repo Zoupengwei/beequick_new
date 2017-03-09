@@ -8,6 +8,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 9999;
 }
 
 header .left {
@@ -36,7 +37,7 @@ header .center a {
 
 /*中间标题*/
 header .center .title {
-    width: 60%;
+    width: 65%;
     height: 100%;
     background: url("http://s3.pstatp.com/growth/mobile_list/image/wap_logo@3x_581de69e38eae19e1cc57449a97be10f.png") right no-repeat;
     background-size: 55% 45%;
@@ -62,7 +63,7 @@ header .right .searchBtn {
     width: 100%;
     height: 100%;
     background: url(//s3.pstatp.com/growth/mobile_list/image/feed_ic_search_normal@3x_0f198e566fac66cbb016bc72f15d4f39.png) no-repeat 50%;
-    background-size: 70% 60%;
+    background-size: 70% 50%;
 }
 
 /*顶部导航栏*/
@@ -76,6 +77,7 @@ nav {
     right: 0;
     display: flex;
     overflow-x: auto;
+    z-index: 9999;
 }
 
 /*隐藏滚动条*/
@@ -107,7 +109,7 @@ nav .addDiv {
     height: 45px;
     position: fixed;
     right: 0;
-    background: #F4F5F6;
+    background: rgba(244, 245, 246, 0.9);
     box-shadow: -2px 0 2px #ccc;
 }
 
@@ -117,6 +119,89 @@ nav .addDiv .addBtn {
     height: 100%;
     background: url(//s3.pstatp.com/growth/mobile_list/image/addred_channel_titlbar@3x_2106879383cd310a182d76e7e234db4c.png) no-repeat 50%;
     background-size: 50% 50%;
+}
+
+/*主要内容部分*/
+main {
+    position: absolute;
+    top: 95px;
+    left: 0;
+    right: 0;
+    overflow: auto;
+}
+
+main .has_action {
+    margin: 0 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+main .middle-model .article_link {
+    display: block;
+    display: flex;
+}
+
+.item_detail .title {
+    font-size: 18px;
+    color: #444;
+    font-weight: normal;
+}
+
+.item_detail .item_info {
+    margin-top: 5px;
+}
+
+.item_detail .item_info > span {
+    color: #999;
+}
+
+main .article_link {
+    display: block;
+}
+
+main .has_action .img_list {
+    display: flex;
+    margin-top: 5px;
+}
+
+/*底部导航栏*/
+footer {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #eee;
+    background: #eee;
+}
+
+footer ul{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer ul li{
+    height:100%;
+}
+footer ul li a{
+    display: block;
+    width:100%;
+    height:100%;
+    font-size: 10px;
+    text-align: center;
+    margin-top:5px;
+}
+footer ul li a span{
+    display: block;
+}
+footer ul li a .iconfont{
+    font-size:28px ;
+}
+footer ul li .active{
+    color: #D43D3D;
 }
 
 

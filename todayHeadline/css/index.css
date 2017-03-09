@@ -1,0 +1,43 @@
+/*底部导航栏*/
+footer {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #eee;
+    background: #eee;
+}
+
+footer ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer ul li {
+    height: 100%;
+}
+
+footer ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+footer ul li a span {
+    display: block;
+}
+
+footer ul li a .iconfont {
+    font-size: 28px;
+}
+
+footer ul li .active {
+    color: #D43D3D;
+}
