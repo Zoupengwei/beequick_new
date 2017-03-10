@@ -68,7 +68,7 @@ header .right .searchBtn {
 
 /*顶部导航栏*/
 nav {
-    width: 100%;
+    width: 88%;
     height: 45px;
     background: #F4F5F6;
     position: fixed;
@@ -127,7 +127,18 @@ main {
     top: 95px;
     left: 0;
     right: 0;
+    bottom: 50px;
     overflow: auto;
+}
+
+main .refreshFlag {
+    width: 100%;
+    background: rgba(135, 206, 250, 0.7);
+    text-align: center;
+}
+
+main .refreshFlag .refreshDesc {
+    color: blue;
 }
 
 main .has_action {
@@ -145,6 +156,10 @@ main .middle-model .article_link {
     font-size: 18px;
     color: #444;
     font-weight: normal;
+}
+
+.item_detail .list_img_item {
+    margin-right: 5px;
 }
 
 .item_detail .item_info {
@@ -176,31 +191,35 @@ footer {
     background: #eee;
 }
 
-footer ul{
-    width:100%;
-    height:100%;
+footer ul {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-around;
 }
 
-footer ul li{
-    height:100%;
+footer ul li {
+    height: 100%;
 }
-footer ul li a{
+
+footer ul li a {
     display: block;
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     font-size: 10px;
     text-align: center;
-    margin-top:5px;
+    margin-top: 5px;
 }
-footer ul li a span{
+
+footer ul li a span {
     display: block;
 }
-footer ul li a .iconfont{
-    font-size:28px ;
+
+footer ul li a .iconfont {
+    font-size: 28px;
 }
-footer ul li .active{
+
+footer ul li .active {
     color: #D43D3D;
 }
 

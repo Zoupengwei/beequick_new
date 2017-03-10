@@ -1,7 +1,7 @@
-    <link rel="stylesheet" href="./common/css/reset.css">
-    <link rel="stylesheet" href="./common/font/iconfont.css">
+<link rel="stylesheet" href="./common/css/reset.css">
+<link rel="stylesheet" href="./common/font/iconfont.css">
 
-    <title>首页</title>
+<title>首页</title>
 
 
 <header>
@@ -11,29 +11,35 @@
 
     <div class="center">
         <a class="title" href="javascript:;"></a>
-        <a class="refreshBtn" href="javascript:;"></a>
+        <a ng-click="refresh()" class="refreshBtn" href="javascript:;"></a>
     </div>
 
     <div class="right">
-        <a class="searchBtn" href="javascript:;"></a>
+        <a class="searchBtn" href="#/search"></a>
     </div>
 </header>
 
+<!--头部导航栏-->
 <nav>
-    <li><a class="active" href="javascript:;">推荐</a></li>
+    <li ng-repeat="list in tabList"><a ng-click="changeTab($index)" ng-class="{active:currentIndex == $index}" href="javascript:;">{{list}}</a></li>
+
+    <!--<li><a class="{{className}}" href="javascript:;">推荐</a></li>
     <li><a href="javascript:;">社会</a></li>
     <li><a href="javascript:;">国际</a></li>
     <li><a href="javascript:;">娱乐</a></li>
     <li><a href="javascript:;">体育</a></li>
     <li><a href="javascript:;">军事</a></li>
-    <li><a href="javascript:;">科技</a></li>
+    <li><a href="javascript:;">科技</a></li>-->
 
     <div class="addDiv">
         <a class="addBtn" href="javascript:;"></a>
     </div>
 </nav>
 
-<main ng-repeat="a in data track by $index">
+<main>
+    <div ng-if="isRefresh" class="refreshFlag">
+        <span class="refreshDesc">{{refreshStr}}</span>
+    </div>
     <!--<section class="has_action middle-model">
         <a class="article_link" href="javascript:;">
             <div class="item_detail desc">
@@ -51,13 +57,15 @@
         </a>
     </section>-->
 
-    <section class="has_action">
+    <section class="has_action" ng-repeat="a in data track by $index">
         <a class="article_link" href="{{a.url}}">
             <div class="item_detail">
                 <h3 class="title">{{a.title}}</h3>
 
-                <ul ng-repeat="imgs in a" class="img_list">
-                    <li class="list_img_item"><img ng-src="{{imgs.thumbnail_pic_s}}" alt=""></li>
+                <ul class="img_list">
+                    <li ng-if="a.thumbnail_pic_s" class="list_img_item"><img ng-src="{{a.thumbnail_pic_s}}" alt=""></li>
+                    <li ng-if="a.thumbnail_pic_s02" class="list_img_item"><img ng-src="{{a.thumbnail_pic_s02}}" alt=""></li>
+                    <li ng-if="a.thumbnail_pic_s03" class="list_img_item"><img ng-src="{{a.thumbnail_pic_s03}}" alt=""></li>
                     <!--<li class="list_img_item"><img src="http://p2.pstatp.com/list/18a300026b59879a65c9" alt=""></li>-->
                     <!--<li class="list_img_item"><img src="http://p3.pstatp.com/list/17820010715f173dc203" alt=""></li>-->
                     <!--<li class="list_img_item"><img src="http://p3.pstatp.com/list/18a5000382ad05717939" alt=""></li>-->
@@ -72,59 +80,59 @@
         </a>
     </section>
 
-   <!-- <section class="has_action middle-model">
-        <a class="article_link" href="javascript:;">
-            <div class="item_detail desc">
-                <h3 class="title">中国给一国送上诱人大礼，韩国能否醒悟迷途知返？</h3>
-                <div class="item_info">
-                    <span class="src">第一军情</span>
-                    <span class="cmt">评论 0</span>
-                    <span class="time">20分钟前</span>
-                </div>
-            </div>
+    <!-- <section class="has_action middle-model">
+         <a class="article_link" href="javascript:;">
+             <div class="item_detail desc">
+                 <h3 class="title">中国给一国送上诱人大礼，韩国能否醒悟迷途知返？</h3>
+                 <div class="item_info">
+                     <span class="src">第一军情</span>
+                     <span class="cmt">评论 0</span>
+                     <span class="time">20分钟前</span>
+                 </div>
+             </div>
 
-            <div class="item_img">
-                <img src="http://p1.pstatp.com/list/18a1000382e1805d1a95" alt="">
-            </div>
-        </a>
-    </section>-->
+             <div class="item_img">
+                 <img src="http://p1.pstatp.com/list/18a1000382e1805d1a95" alt="">
+             </div>
+         </a>
+     </section>-->
 
-   <!-- <section class="has_action">
-        <a class="article_link" href="javascript:;">
-            <div class="item_detail">
-                <h3 class="title">曾做女首富 入狱后负债累累？</h3>
+    <!-- <section class="has_action">
+         <a class="article_link" href="javascript:;">
+             <div class="item_detail">
+                 <h3 class="title">曾做女首富 入狱后负债累累？</h3>
 
-                <ul class="img_list">
-                    <li class="list_img_item"><img src="http://p2.pstatp.com/list/18a300026b59879a65c9" alt=""></li>
-                    <li class="list_img_item"><img src="http://p3.pstatp.com/list/17820010715f173dc203" alt=""></li>
-                    <li class="list_img_item"><img src="http://p3.pstatp.com/list/18a5000382ad05717939" alt=""></li>
-                </ul>
+                 <ul class="img_list">
+                     <li class="list_img_item"><img src="http://p2.pstatp.com/list/18a300026b59879a65c9" alt=""></li>
+                     <li class="list_img_item"><img src="http://p3.pstatp.com/list/17820010715f173dc203" alt=""></li>
+                     <li class="list_img_item"><img src="http://p3.pstatp.com/list/18a5000382ad05717939" alt=""></li>
+                 </ul>
 
-                <div class="item_info">
-                    <span class="src">头条问答</span>
-                    <span class="cmt">评论 21</span>
-                    <span class="time">22分钟前</span>
-                </div>
-            </div>
-        </a>
-    </section>-->
+                 <div class="item_info">
+                     <span class="src">头条问答</span>
+                     <span class="cmt">评论 21</span>
+                     <span class="time">22分钟前</span>
+                 </div>
+             </div>
+         </a>
+     </section>-->
 
-   <!-- <section class="has_action middle-model">
-        <a class="article_link" href="javascript:;">
-            <div class="item_detail desc">
-                <h3 class="title">中国给一国送上诱人大礼，韩国能否醒悟迷途知返？</h3>
-                <div class="item_info">
-                    <span class="src">第一军情</span>
-                    <span class="cmt">评论 0</span>
-                    <span class="time">20分钟前</span>
-                </div>
-            </div>
+    <!-- <section class="has_action middle-model">
+         <a class="article_link" href="javascript:;">
+             <div class="item_detail desc">
+                 <h3 class="title">中国给一国送上诱人大礼，韩国能否醒悟迷途知返？</h3>
+                 <div class="item_info">
+                     <span class="src">第一军情</span>
+                     <span class="cmt">评论 0</span>
+                     <span class="time">20分钟前</span>
+                 </div>
+             </div>
 
-            <div class="item_img">
-                <img src="http://p1.pstatp.com/list/18a1000382e1805d1a95" alt="">
-            </div>
-        </a>
-    </section>-->
+             <div class="item_img">
+                 <img src="http://p1.pstatp.com/list/18a1000382e1805d1a95" alt="">
+             </div>
+         </a>
+     </section>-->
 
     <!--<section class="has_action">
         <a class="article_link" href="javascript:;">
@@ -148,11 +156,4 @@
 
 </main>
 
-<footer>
-    <ul>
-        <li><a class="active" href="#/home"><span class="active iconfont icon-shouye"></span>首页</a></li>
-        <li><a href="#/video"><span class="iconfont icon-bofang"></span>视频</a></li>
-        <li><a href="#/follow"><span class="iconfont icon-guanzhu"></span>关注</a></li>
-        <li><a href="#/personal"><span class="iconfont icon-my"></span>我的</a></li>
-    </ul>
-</footer>
+

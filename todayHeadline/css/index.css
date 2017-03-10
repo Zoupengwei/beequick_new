@@ -6,6 +6,7 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
+    /*z-index: 9999;*/
     border-top: 1px solid #eee;
     background: #eee;
 }
@@ -40,4 +41,6 @@ footer ul li a .iconfont {
 
 footer ul li .active {
     color: #D43D3D;
+    -webkit-text-fill-color: #D43D3D;
 }
+
