@@ -5,13 +5,13 @@
 
 app.controller("homeCtrl", ["$scope", "$http", "$interval", function ($scope, $http, $interval) {
     $scope.data = [];
-    $scope.isActive = false;
     var urlStr = 'http://1.zpwsz.applinzi.com/todayHeadline/news.php?type=';
     var title = '';
     $scope.tabList = ['推荐', '军事', '科技', '国际', '娱乐', '体育'];
 
     //默认为第一个
     $scope.currentIndex = 0;
+
     //点击改变样式
     $scope.changeTab = function (index) {
         //得到当前的index
@@ -19,11 +19,11 @@ app.controller("homeCtrl", ["$scope", "$http", "$interval", function ($scope, $h
 
         //得到tab栏的字,并转换为拼音
         title = pinyin.getFullChars(this.list).toLowerCase();
-        //重新获取每一项新闻
+        //获取每一项新闻
         $scope.refresh();
     };
 
-    //刷新
+    //刷新请求网络
     $scope.refresh = function () {
         //重新获取每一项新闻
         $http.get(urlStr + title)
@@ -48,13 +48,26 @@ app.controller("homeCtrl", ["$scope", "$http", "$interval", function ($scope, $h
             })
     };
 
+   //点击搜索按钮
+    $(".searchBtn").on('click',function () {
+        //底部菜单隐藏
+        $("footer").hide();
+    })
+
+    //点击添加频道按钮
+    $(".addBtn").on('click', function () {
+        //底部菜单隐藏
+        $("footer").hide();
+    });
+
+    //打开就请求一次
     $scope.refresh();
 
     /*$http.get(urlStr + "top")
-        .success(function (req) {
-            console.log(req);
-            $scope.data = req.result.data;
-        })*/
+     .success(function (req) {
+     console.log(req);
+     $scope.data = req.result.data;
+     })*/
 
     //汉字转拼音
     var pinyin = (function () {

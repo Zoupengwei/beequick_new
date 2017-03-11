@@ -1,21 +1,63 @@
 <link rel="stylesheet" href="./common/css/reset.css">
 <link rel="stylesheet" href="./common/font/iconfont.css">
-<link rel="stylesheet" href="./css/index.css">
-<link rel="stylesheet" href="./video/css/video.css">
 
+<script src="./common/lib/angular-animate.min.js"></script>
 
 <nav>
-    <li><a class="active" href="javascript:;">推荐</a></li>
-    <li><a href="javascript:;">音乐</a></li>
-    <li><a href="javascript:;">搞笑</a></li>
-    <li><a href="javascript:;">社会</a></li>
-    <li><a href="javascript:;">小品</a></li>
-    <li><a href="javascript:;">生活</a></li>
-    <li><a href="javascript:;">影视</a></li>
+    <li ng-repeat="list in tabList"><a ng-click="changeTab($index)" ng-class="{active:currentIndex == $index}"
+                                       href="javascript:;">{{list}}</a></li>
 
     <div class="search">
         <a class="searchBtn" href="javascript:;"><span class="iconfont icon-sousuo_sousuo"></span></a>
     </div>
 </nav>
+
+<main>
+    <div class="videoWrap">
+        <p class="title">视频标题</p>
+        <video poster="" src="./data/Nimo.MP4">浏览器不支持</video>
+        <p class="videoInfo">
+            <span class="author">
+                <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=950162565,3259577602&fm=21&gp=0.jpg"
+                     alt="">
+                视频作者
+            </span>
+            <span class="playCount">1万次播放</span>
+            <span class="comment iconfont icon-xiaoxi"></span>
+            <span ng-click="isShow()" ng-model='isCheck' class="iconfont icon-caidan"></span>
+        </p>
+    </div>
+    <!--隐藏 DIV: <input type="checkbox" ng-model="myCheck">-->
+</main>
+
+<div ng-hide="isCheck" class="shareDiv">
+    <div class="top">
+        <ul>
+            <li><span class="iconfont icon-pengyouquan"></span>微信朋友圈</li>
+            <li><span class="iconfont icon-weixin"></span>微信好友</li>
+            <li><span class="iconfont icon-qq-color"></span>QQ好友</li>
+            <li><span class="iconfont icon-qqkongjian"></span>QQ空间</li>
+            <li><span class="iconfont icon-weibo"></span>新浪微博</li>
+            <li><span class="iconfont icon-tencentweibo"></span>腾讯微博</li>
+            <li><span class="iconfont icon-zhifubao"></span>支付宝好友</li>
+        </ul>
+    </div>
+
+    <div class="middle">
+        <ul>
+            <li><span class="iconfont icon-shoucang"></span>收藏</li>
+            <li><span class="iconfont icon-iconcha"></span>不感兴趣</li>
+            <li><span class="iconfont icon-dianzan"></span>顶</li>
+            <li><span class="iconfont icon-cai"></span>踩</li>
+            <li><span class="iconfont icon-jingbao"></span>举报</li>
+            <li><span class="iconfont icon-lianjie"></span>复制链接</li>
+        </ul>
+    </div>
+
+    <div ng-click="isShow()" class="bottom">取消</div>
+</div>
+
+
+
 
 

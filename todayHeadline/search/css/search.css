@@ -42,6 +42,10 @@ header .center form .icon-sousuo_sousuo {
 header .center form input {
     background: #eee;
     outline: none;
+    font-size: 13px;
+}
+header .center form input:focus{
+    color: blue;
 }
 
 header .right button {

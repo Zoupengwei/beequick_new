@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="./common/css/reset.css">
+<link rel="stylesheet" href="./common/font/iconfont.css">
+<link rel="stylesheet" href="./common/css/swiper.min.css">
 
-    <link rel="stylesheet" href="../common/css/reset.css">
-    <link rel="stylesheet" href="../common/font/iconfont.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../common/css/swiper.min.css">
-    <link rel="stylesheet" href="./css/mall.css">
-
-    <script src="../common/lib/swiper.min.js"></script>
-
-    <title>头条商城</title>
-</head>
-<body>
+<script src="./common/lib/swiper.min.js"></script>
 
 <header>
     <div class="left">
@@ -33,21 +21,18 @@
 
     <div class="right swiper-container-vertical">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">兑吧活动</div>
-            <div class="swiper-slide">邀请新伙伴领头条新年红包</div>
+            <!--swiper-no-swiping 设置禁止滑动-->
+            <div class="swiper-slide swiper-no-swiping" ng-repeat="i in swiperData track by $index">{{i}}</div>
+            <!--<div class="swiper-slide swiper-no-swiping">邀请新伙伴领头条新年红包</div>-->
         </div>
     </div>
 </div>
 
 <main>
     <ul>
-        <li><a href=""><span class="iconfont icon-temaishixin"></span>今日特卖</a></li>
-        <li><a href=""><span class="iconfont icon-dianyingpiao"></span>今日特卖</a></li>
-        <li><a href=""><span class="iconfont icon-ai-hongbao1"></span>今日特卖</a></li>
-        <li><a href=""><span class="iconfont icon-dingdan1"></span>今日特卖</a></li>
+        <li><a href="javascript:;"><span class="iconfont icon-temaishixin"></span>今日特卖</a></li>
+        <li><a href="javascript:;"><span class="iconfont icon-dianyingpiao"></span>今日电影</a></li>
+        <li><a href="javascript:;"><span class="iconfont icon-ai-hongbao1"></span>邀请有奖</a></li>
+        <li><a href="javascript:;"><span class="iconfont icon-dingdan1"></span>我的订单</a></li>
     </ul>
 </main>
-
-
-</body>
-</html>

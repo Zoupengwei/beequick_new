@@ -1,22 +1,34 @@
-var app = angular.module("indexApp", ["ngRoute", "angularCSS", "ui.router"]);
+var app = angular.module("indexApp", ["ngRoute", "angularCSS", "ui.router", "ngAnimate"]);
 
 app.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when("/home", {
+    $routeProvider.when("/home", {  //主页
         templateUrl: "./home/home.html",
         css: "./home/css/home.css",
         controller: "homeCtrl",
-    }).when("/video", {
+    }).when("/video", {    //视频
         templateUrl: "./video/video.html",
         css: "./video/css/video.css",
         controller: "videoCtrl",
-    }).when("/follow", {
+    }).when("/follow", {   //关注
         templateUrl: "./follow/follow.html",
         css: "./follow/css/follow.css",
         controller: "followCtrl",
-    }).when("/personal", {
+    }).when("/personal", {  //我的
         templateUrl: "./personal/personal.html",
         css: "./personal/css/personal.css",
         controller: "personalCtrl",
+    }).when("/channel", {   //频道
+        templateUrl: "./channel/channel.html",
+        css: "./channel/css/channel.css",
+        controller: "channelCtrl",
+    }).when("/search", {   //搜索
+        templateUrl: "./search/search.html",
+        css: "./search/css/search.css",
+        controller: "searchCtrl",
+    }).when("/mall", {   //头条商城
+        templateUrl: "./mall/mall.html",
+        css: "./mall/css/mall.css",
+        controller: "mallCtrl",
     }).otherwise("/home")
 
 }])
@@ -44,7 +56,7 @@ app.config(function ($stateProvider) {
     var personalState = {
         name: 'personal',
         url: '/personal',
-        templateUrl: './personal/personal.html'
+        // templateUrl: './personal/personal.html'
     }
 
     $stateProvider.state(homeState);

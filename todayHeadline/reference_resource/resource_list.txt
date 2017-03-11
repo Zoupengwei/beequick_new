@@ -19,3 +19,7 @@ https://segmentfault.com/q/1010000005706411
 
 ui-router
 https://ui-router.github.io/ng1/tutorial/helloworld#live-demo
+
+
+巧用transform实现HTML5 video标签视频比例拉伸
+http://www.cnblogs.com/liuxianan/p/html5-video-resize.html
