@@ -1,4 +1,4 @@
-var app = angular.module("indexApp", ["ngRoute", "angularCSS", "ui.router", "ngAnimate"]);
+var app = angular.module("indexApp", ["ngRoute", "angularCSS", "ui.router", "ngAnimate", "ionic"]);
 
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when("/home", {  //主页

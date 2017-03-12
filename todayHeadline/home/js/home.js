@@ -2,11 +2,23 @@
  * Created by 邹朋位 on 2017/3/9.
  */
 
+app.run(function ($ionicPlatform) {
+    $ionicPlatform.ready(function () {
+        if (window.cordova && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if(window.StatusBar) {
+            StatusBar.styleDefault();
+        }
+    });
+})
+
 
 app.controller("homeCtrl", ["$scope", "$http", "$interval", function ($scope, $http, $interval) {
     $scope.data = [];
     var urlStr = 'http://1.zpwsz.applinzi.com/todayHeadline/news.php?type=';
-    var title = '';
+    var title = 'tuijian';
+
     $scope.tabList = ['推荐', '军事', '科技', '国际', '娱乐', '体育'];
 
     //默认为第一个
@@ -19,37 +31,52 @@ app.controller("homeCtrl", ["$scope", "$http", "$interval", function ($scope, $h
 
         //得到tab栏的字,并转换为拼音
         title = pinyin.getFullChars(this.list).toLowerCase();
+
         //获取每一项新闻
         $scope.refresh();
     };
 
     //刷新请求网络
     $scope.refresh = function () {
+        //开始刷新按钮的动画
+        $('.refreshBtn').css('animation', 'rotate-freshBtn 0.6s infinite normal linear');
+
         //重新获取每一项新闻
         $http.get(urlStr + title)
             .success(function (req) {
                 $scope.data = req.result.data;
+                console.log($scope.data);
+
+                //成功后停掉动画
+                $('.refreshBtn').css('animation', '');
 
                 $scope.isRefresh = true;
                 $scope.refreshStr = '已经更新';
 
                 //定时器3s后消失
-                $interval(function () {
+                $scope.timer = $interval(function () {
                     $scope.isRefresh = false;
+                    //清掉定时器
+                    $interval.cancel($scope.timer);
                 }, 3000);
             })
             .error(function () {
                 $scope.isRefresh = true;
                 $scope.refreshStr = "网络访问不了";
 
-                $interval(function () {
+                $scope.timer = $interval(function () {
                     $scope.isRefresh = false;
+                    //清掉定时器
+                    $interval.cancel($scope.timer);
                 }, 3000);
+            })
+            .finally(function () {
+                $scope.$broadcast('scroll.refreshComplete');
             })
     };
 
-   //点击搜索按钮
-    $(".searchBtn").on('click',function () {
+    //点击搜索按钮
+    $(".searchBtn").on('click', function () {
         //底部菜单隐藏
         $("footer").hide();
     })
@@ -62,6 +89,16 @@ app.controller("homeCtrl", ["$scope", "$http", "$interval", function ($scope, $h
 
     //打开就请求一次
     $scope.refresh();
+
+    //导航栏添加频道,传入一个频道list参数
+    /*$scope.addChannel = function (list) {
+     channelService.add(list);
+     }*/
+
+    //获取频道列表
+    $scope.getChannel = function () {
+
+    }
 
     /*$http.get(urlStr + "top")
      .success(function (req) {

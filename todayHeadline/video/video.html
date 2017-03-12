@@ -3,28 +3,33 @@
 
 <script src="./common/lib/angular-animate.min.js"></script>
 
+<!--头部导航栏-->
 <nav>
     <li ng-repeat="list in tabList"><a ng-click="changeTab($index)" ng-class="{active:currentIndex == $index}"
                                        href="javascript:;">{{list}}</a></li>
 
     <div class="search">
-        <a class="searchBtn" href="javascript:;"><span class="iconfont icon-sousuo_sousuo"></span></a>
+        <a class="searchBtn" href="#/search"><span class="iconfont icon-sousuo_sousuo"></span></a>
     </div>
 </nav>
 
 <main>
-    <div class="videoWrap">
-        <p class="title">视频标题</p>
-        <video poster="" src="./data/Nimo.MP4">浏览器不支持</video>
+    <div ng-if="isRefresh" class="refreshFlag">
+        <span class="refreshDesc">{{refreshStr}}</span>
+    </div>
+
+    <div ng-repeat="item in videoData track by $index" class="videoWrap">
+        <p class="title">{{item.title}}</p>
+        <video poster="{{item.pic}}" src="">浏览器不支持</video>
         <p class="videoInfo">
             <span class="author">
                 <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=950162565,3259577602&fm=21&gp=0.jpg"
                      alt="">
                 视频作者
             </span>
-            <span class="playCount">1万次播放</span>
+            <span class="playCount">{{item.watchCount}}次播放</span>
             <span class="comment iconfont icon-xiaoxi"></span>
-            <span ng-click="isShow()" ng-model='isCheck' class="iconfont icon-caidan"></span>
+            <span ng-click="isShow(event)" ng-model='isCheck' class="iconfont icon-caidan"></span>
         </p>
     </div>
     <!--隐藏 DIV: <input type="checkbox" ng-model="myCheck">-->
