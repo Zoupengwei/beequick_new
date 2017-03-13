@@ -38,7 +38,7 @@ app.config(function ($stateProvider) {
     var homeState = {
         name: 'home',
         url: '/home',
-        // templateUrl: './home/home.html'
+        // templateUrl: './home/home.html',
     }
 
     var videoState = {

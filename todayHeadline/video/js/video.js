@@ -1,6 +1,17 @@
 /**
  * Created by 邹朋位 on 2017/3/10.
  */
+app.run(function ($ionicPlatform) {
+    $ionicPlatform.ready(function () {
+        if (window.cordova && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if(window.StatusBar) {
+            StatusBar.styleDefault();
+        }
+    });
+});
+
 
 app.controller("videoCtrl", ["$scope", "$http", "$interval", function ($scope, $http, $interval) {
     $scope.videoData = [];
