@@ -23,3 +23,24 @@ https://ui-router.github.io/ng1/tutorial/helloworld#live-demo
 
 巧用transform实现HTML5 video标签视频比例拉伸
 http://www.cnblogs.com/liuxianan/p/html5-video-resize.html
+
+
+me-lazyload懒加载
+https://github.com/Treri/me-lazyload
+
+me-lazyimg
+https://github.com/Treri/me-lazyimg
+
+新闻详情页的实现
+http://www.cnblogs.com/tonge/p/5719548.html#3637825
+
+使用Tabs和SlideBox实现左右滑动菜单
+http://www.cnblogs.com/tonge/p/5699968.html
+
+
+ionic实现可滑动的tab选项卡切换效果
+http://www.youdaili.net/javascript/21921.html
+
+
+Angular--页面间切换及传值的四种方法
+http://www.cnblogs.com/Uncle-Maize/p/6295722.html

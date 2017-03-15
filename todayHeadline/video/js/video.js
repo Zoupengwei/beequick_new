@@ -6,7 +6,7 @@ app.run(function ($ionicPlatform) {
         if (window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         }
-        if(window.StatusBar) {
+        if (window.StatusBar) {
             StatusBar.styleDefault();
         }
     });
@@ -33,8 +33,10 @@ app.controller("videoCtrl", ["$scope", "$http", "$interval", function ($scope, $
         $scope.refresh();
     }
 
+
+
     //点击视频播放并设置
-    $("main video").on('click', function () {
+    $("video").on('click', function () {
         this.play();
         this.setAttribute("controls", "controls");
     });
@@ -74,6 +76,9 @@ app.controller("videoCtrl", ["$scope", "$http", "$interval", function ($scope, $
                     //清除定时器
                     $interval.cancel($scope.timer);
                 }, 3000);
+            })
+            .finally(function () {//停止刷新
+                $scope.$broadcast('scroll.refreshComplete');
             })
     }
 

@@ -1,0 +1,32 @@
+<ion-list>
+    <ion-item class="has_action" ng-repeat="a in data track by $index">
+        <section class="has_action">
+            <a class="article_link" href="{{a.url}}">
+                <div class="item_detail">
+                    <h3 class="title">{{a.title}}</h3>
+
+                    <ul class="img_list">
+                        <li ng-if="a.thumbnail_pic_s" class="list_img_item">
+                            <img [data-src] ng-src="{{a.thumbnail_pic_s}}">
+                        </li>
+                        <li ng-if="a.thumbnail_pic_s02" class="list_img_item">
+                            <img [data-src] ng-src="{{a.thumbnail_pic_s02}}">
+                        </li>
+                        <li ng-if="a.thumbnail_pic_s03" class="list_img_item">
+                            <img [data-src] ng-src="{{a.thumbnail_pic_s03}}">
+                        </li>
+                        <!--<li class="list_img_item"><img src="http://p2.pstatp.com/list/18a300026b59879a65c9" alt=""></li>
+                        <li class="list_img_item"><img src="http://p3.pstatp.com/list/17820010715f173dc203" alt=""></li>
+                        <li class="list_img_item"><img src="http://p3.pstatp.com/list/18a5000382ad05717939" alt=""></li>-->
+                    </ul>
+
+                    <div class="item_info">
+                        <span class="src">{{a.author_name}}</span>
+                        <!--<span class="cmt">评论 21</span>-->
+                        <span class="time">{{a.date}}</span>
+                    </div>
+                </div>
+            </a>
+        </section>
+    </ion-item>
+</ion-list>

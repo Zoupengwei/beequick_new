@@ -17,149 +17,158 @@
 </header>
 
 <!--头部导航栏-->
-<nav>
-    <li ng-repeat="list in tabList"><a ng-click="changeTab($index)" ng-class="{active:currentIndex == $index}"
-                                       href="javascript:;">{{list}}</a></li>
+<ion-tabs class="tabs-striped tabs-top">
+    <ion-tab ng-repeat="item in tabs" on-select="changeTab($index)"></ion-tab>
 
-    <!--<li><a class="{{className}}" href="javascript:;">推荐</a></li>
-    <li><a href="javascript:;">社会</a></li>
-    <li><a href="javascript:;">国际</a></li>
-    <li><a href="javascript:;">娱乐</a></li>
-    <li><a href="javascript:;">体育</a></li>
-    <li><a href="javascript:;">军事</a></li>
-    <li><a href="javascript:;">科技</a></li>-->
+    <nav>
+        <li ng-repeat="list in tabList track by $index">
+            <a ng-click="changeTab($index)" ng-class="{active:currentIndex == $index}"
+               href="javascript:;">{{list}}</a>
+        </li>
 
-    <div class="addDiv">
-        <a class="addBtn" href="#/channel"></a>
-    </div>
-</nav>
+        <!--<li><a class="{{className}}" href="javascript:;">推荐</a></li>
+        <li><a href="javascript:;">社会</a></li>
+        <li><a href="javascript:;">国际</a></li>
+        <li><a href="javascript:;">娱乐</a></li>
+        <li><a href="javascript:;">体育</a></li>
+        <li><a href="javascript:;">军事</a></li>
+        <li><a href="javascript:;">科技</a></li>-->
+        <div class="addDiv">
+            <a class="addBtn" href="#/channel"></a>
+        </div>
+    </nav>
+</ion-tabs>
 
 <!--主要内容-->
-    <ion-content class="has-header has-subheader has-footer">
-        <ion-refresher class="downRefresh" pulling-text="下拉刷新" on-refresh="refresh()">
-            <!--<section class="has_action middle-model">
-                <a class="article_link" href="javascript:;">
-                    <div class="item_detail desc">
-                        <h3 class="title">中国给一国送上诱人大礼，韩国能否醒悟迷途知返？</h3>
-                        <div class="item_info">
-                            <span class="src">第一军情</span>
-                            <span class="cmt">评论 0</span>
-                            <span class="time">20分钟前</span>
-                        </div>
+<ion-content class="has-header has-subheader has-footer">
+
+    <ion-refresher class="downRefresh" pulling-text="下拉刷新" on-refresh="downRefresh()">
+        <!--<section class="has_action middle-model">
+            <a class="article_link" href="javascript:;">
+                <div class="item_detail desc">
+                    <h3 class="title">中国给一国送上诱人大礼，韩国能否醒悟迷途知返？</h3>
+                    <div class="item_info">
+                        <span class="src">第一军情</span>
+                        <span class="cmt">评论 0</span>
+                        <span class="time">20分钟前</span>
                     </div>
+                </div>
 
-                    <div class="item_img">
-                        <img src="http://p1.pstatp.com/list/18a1000382e1805d1a95" alt="">
+                <div class="item_img">
+                    <img src="http://p1.pstatp.com/list/18a1000382e1805d1a95" alt="">
+                </div>
+            </a>
+        </section>-->
+        <!-- <section class="has_action middle-model">
+             <a class="article_link" href="javascript:;">
+                 <div class="item_detail desc">
+                     <h3 class="title">中国给一国送上诱人大礼，韩国能否醒悟迷途知返？</h3>
+                     <div class="item_info">
+                         <span class="src">第一军情</span>
+                         <span class="cmt">评论 0</span>
+                         <span class="time">20分钟前</span>
+                     </div>
+                 </div>
+
+                 <div class="item_img">
+                     <img src="http://p1.pstatp.com/list/18a1000382e1805d1a95" alt="">
+                 </div>
+             </a>
+         </section>-->
+        <!-- <section class="has_action">
+             <a class="article_link" href="javascript:;">
+                 <div class="item_detail">
+                     <h3 class="title">曾做女首富 入狱后负债累累？</h3>
+
+                     <ul class="img_list">
+                         <li class="list_img_item"><img src="http://p2.pstatp.com/list/18a300026b59879a65c9" alt=""></li>
+                         <li class="list_img_item"><img src="http://p3.pstatp.com/list/17820010715f173dc203" alt=""></li>
+                         <li class="list_img_item"><img src="http://p3.pstatp.com/list/18a5000382ad05717939" alt=""></li>
+                     </ul>
+
+                     <div class="item_info">
+                         <span class="src">头条问答</span>
+                         <span class="cmt">评论 21</span>
+                         <span class="time">22分钟前</span>
+                     </div>
+                 </div>
+             </a>
+         </section>-->
+        <!-- <section class="has_action middle-model">
+             <a class="article_link" href="javascript:;">
+                 <div class="item_detail desc">
+                     <h3 class="title">中国给一国送上诱人大礼，韩国能否醒悟迷途知返？</h3>
+                     <div class="item_info">
+                         <span class="src">第一军情</span>
+                         <span class="cmt">评论 0</span>
+                         <span class="time">20分钟前</span>
+                     </div>
+                 </div>
+
+                 <div class="item_img">
+                     <img src="http://p1.pstatp.com/list/18a1000382e1805d1a95" alt="">
+                 </div>
+             </a>
+         </section>-->
+        <!--<section class="has_action">
+            <a class="article_link" href="javascript:;">
+                <div class="item_detail">
+                    <h3 class="title">曾做女首富 入狱后负债累累？</h3>
+
+                    <ul class="img_list">
+                        <li class="list_img_item"><img src="http://p2.pstatp.com/list/18a300026b59879a65c9" alt=""></li>
+                        <li class="list_img_item"><img src="http://p3.pstatp.com/list/17820010715f173dc203" alt=""></li>
+                        <li class="list_img_item"><img src="http://p3.pstatp.com/list/18a5000382ad05717939" alt=""></li>
+                    </ul>
+
+                    <div class="item_info">
+                        <span class="src">头条问答</span>
+                        <span class="cmt">评论 21</span>
+                        <span class="time">22分钟前</span>
                     </div>
-                </a>
-            </section>-->
+                </div>
+            </a>
+        </section>-->
+    </ion-refresher>
 
-            <!-- <section class="has_action middle-model">
-                 <a class="article_link" href="javascript:;">
-                     <div class="item_detail desc">
-                         <h3 class="title">中国给一国送上诱人大礼，韩国能否醒悟迷途知返？</h3>
-                         <div class="item_info">
-                             <span class="src">第一军情</span>
-                             <span class="cmt">评论 0</span>
-                             <span class="time">20分钟前</span>
-                         </div>
-                     </div>
+    <main lazy-container>
+        <div ng-if="isRefresh" class="refreshFlag">
+            <span class="refreshDesc">{{refreshStr}}</span>
+        </div>
 
-                     <div class="item_img">
-                         <img src="http://p1.pstatp.com/list/18a1000382e1805d1a95" alt="">
-                     </div>
-                 </a>
-             </section>-->
-            <!-- <section class="has_action">
-                 <a class="article_link" href="javascript:;">
-                     <div class="item_detail">
-                         <h3 class="title">曾做女首富 入狱后负债累累？</h3>
+        <ion-list>
+            <ion-item ng-repeat="a in data track by $index">
+                <section class="has_action">
+                    <a class="article_link" href="{{a.url}}">
+                        <div class="item_detail">
+                            <h3 class="title">{{a.title}}</h3>
 
-                         <ul class="img_list">
-                             <li class="list_img_item"><img src="http://p2.pstatp.com/list/18a300026b59879a65c9" alt=""></li>
-                             <li class="list_img_item"><img src="http://p3.pstatp.com/list/17820010715f173dc203" alt=""></li>
-                             <li class="list_img_item"><img src="http://p3.pstatp.com/list/18a5000382ad05717939" alt=""></li>
-                         </ul>
+                            <ul class="img_list">
+                                <li ng-if="a.thumbnail_pic_s" class="list_img_item">
+                                    <img lazy-src="{{a.thumbnail_pic_s}}">
+                                </li>
+                                <li ng-if="a.thumbnail_pic_s02" class="list_img_item">
+                                    <img lazy-src="{{a.thumbnail_pic_s02}}">
+                                </li>
+                                <li ng-if="a.thumbnail_pic_s03" class="list_img_item">
+                                    <img lazy-src="{{a.thumbnail_pic_s03}}">
+                                </li>
+                                <!--<li class="list_img_item"><img src="http://p2.pstatp.com/list/18a300026b59879a65c9" alt=""></li>
+                                <li class="list_img_item"><img src="http://p3.pstatp.com/list/17820010715f173dc203" alt=""></li>
+                                <li class="list_img_item"><img src="http://p3.pstatp.com/list/18a5000382ad05717939" alt=""></li>-->
+                            </ul>
 
-                         <div class="item_info">
-                             <span class="src">头条问答</span>
-                             <span class="cmt">评论 21</span>
-                             <span class="time">22分钟前</span>
-                         </div>
-                     </div>
-                 </a>
-             </section>-->
-            <!-- <section class="has_action middle-model">
-                 <a class="article_link" href="javascript:;">
-                     <div class="item_detail desc">
-                         <h3 class="title">中国给一国送上诱人大礼，韩国能否醒悟迷途知返？</h3>
-                         <div class="item_info">
-                             <span class="src">第一军情</span>
-                             <span class="cmt">评论 0</span>
-                             <span class="time">20分钟前</span>
-                         </div>
-                     </div>
-
-                     <div class="item_img">
-                         <img src="http://p1.pstatp.com/list/18a1000382e1805d1a95" alt="">
-                     </div>
-                 </a>
-             </section>-->
-            <!--<section class="has_action">
-                <a class="article_link" href="javascript:;">
-                    <div class="item_detail">
-                        <h3 class="title">曾做女首富 入狱后负债累累？</h3>
-
-                        <ul class="img_list">
-                            <li class="list_img_item"><img src="http://p2.pstatp.com/list/18a300026b59879a65c9" alt=""></li>
-                            <li class="list_img_item"><img src="http://p3.pstatp.com/list/17820010715f173dc203" alt=""></li>
-                            <li class="list_img_item"><img src="http://p3.pstatp.com/list/18a5000382ad05717939" alt=""></li>
-                        </ul>
-
-                        <div class="item_info">
-                            <span class="src">头条问答</span>
-                            <span class="cmt">评论 21</span>
-                            <span class="time">22分钟前</span>
-                        </div>
-                    </div>
-                </a>
-            </section>-->
-        </ion-refresher>
-
-        <main>
-            <div ng-if="isRefresh" class="refreshFlag">
-                <span class="refreshDesc">{{refreshStr}}</span>
-            </div>
-            <ion-list>
-                <ion-item class="has_action" ng-repeat="a in data track by $index">
-                    <section class="has_action">
-                        <a class="article_link" href="{{a.url}}">
-                            <div class="item_detail">
-                                <h3 class="title">{{a.title}}</h3>
-
-                                <ul class="img_list">
-                                    <li ng-if="a.thumbnail_pic_s" class="list_img_item"><img ng-src="{{a.thumbnail_pic_s}}">
-                                    </li>
-                                    <li ng-if="a.thumbnail_pic_s02" class="list_img_item"><img ng-src="{{a.thumbnail_pic_s02}}">
-                                    </li>
-                                    <li ng-if="a.thumbnail_pic_s03" class="list_img_item"><img ng-src="{{a.thumbnail_pic_s03}}">
-                                    </li>
-                                    <!--<li class="list_img_item"><img src="http://p2.pstatp.com/list/18a300026b59879a65c9" alt=""></li>
-                                    <li class="list_img_item"><img src="http://p3.pstatp.com/list/17820010715f173dc203" alt=""></li>
-                                    <li class="list_img_item"><img src="http://p3.pstatp.com/list/18a5000382ad05717939" alt=""></li>-->
-                                </ul>
-
-                                <div class="item_info">
-                                    <span class="src">{{a.author_name}}</span>
-                                    <!--<span class="cmt">评论 21</span>-->
-                                    <span class="time">{{a.date}}</span>
-                                </div>
+                            <div class="item_info">
+                                <span class="src">{{a.author_name}}</span>
+                                <!--<span class="cmt">评论 21</span>-->
+                                <span class="time">{{a.date}}</span>
                             </div>
-                        </a>
-                    </section>
-                </ion-item>
-            </ion-list>
+                        </div>
+                    </a>
+                </section>
+            </ion-item>
+        </ion-list>
+    </main>
+</ion-content>
 
-        </main>
-    </ion-content>
 

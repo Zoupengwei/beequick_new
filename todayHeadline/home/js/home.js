@@ -7,14 +7,14 @@ app.run(function ($ionicPlatform) {
         if (window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         }
-        if(window.StatusBar) {
+        if (window.StatusBar) {
             StatusBar.styleDefault();
         }
     });
 })
 
 
-app.controller("homeCtrl", ["$scope", "$http", "$interval", function ($scope, $http, $interval) {
+app.controller("homeCtrl", ["$scope", "$http", "$interval", "$ionicTabsDelegate", function ($scope, $http, $interval, $ionicTabsDelegate) {
     $scope.data = [];
     var urlStr = 'http://1.zpwsz.applinzi.com/todayHeadline/news.php?type=';
     var title = 'tuijian';
@@ -70,10 +70,32 @@ app.controller("homeCtrl", ["$scope", "$http", "$interval", function ($scope, $h
                     $interval.cancel($scope.timer);
                 }, 3000);
             })
-            .finally(function () {
+            .finally(function () {//停止刷新
                 $scope.$broadcast('scroll.refreshComplete');
             })
     };
+
+    //下拉刷新
+    $scope.downRefresh = function () {
+        console.log($("main").scrollTop());
+        $scope.refresh();
+        if ($("main").scrollTop() > 500) {
+            delete $("ion-refresher");
+        } else {
+            // $("ion-refresher").removeClass("downRefresh");
+        }
+        return;
+    }
+
+    //顶部双击刷新
+    $("header .center").on('dblclick', (function () {
+        console.log(7777)
+        $scope.refresh();
+    }));
+    /* $scope.dbClickRefresh = function () {
+     console.log(888)
+     $scope.refresh();
+     }*/
 
     //点击搜索按钮
     $(".searchBtn").on('click', function () {
