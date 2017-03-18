@@ -1,7 +1,7 @@
 /*头部标题栏*/
 header {
     width: 10rem;
-    height: 50px;
+    height: 1.388888rem;
     background: #d43d3d;
     display: flex;
     position: fixed;
@@ -14,7 +14,7 @@ header {
 header .left {
     width: 1rem;
     height: 100%;
-    margin-left: 10px;
+    margin-left: 0.277777rem;
 }
 
 /*左侧广告按钮*/
@@ -63,7 +63,7 @@ header .center .refreshBtn {
 header .right {
     width: 1rem;
     height: 100%;
-    margin-right: 10px;
+    margin-right: 0.277777rem;
 }
 
 /*右侧搜索按钮*/
@@ -78,10 +78,10 @@ header .right .searchBtn {
 /*顶部导航栏*/
 nav {
     width: 88%;
-    height: 45px;
+    height: 1.25rem;
     background: #F4F5F6;
     position: fixed;
-    top: 50px;
+    top: 1.388888rem;
     left: 0;
     right: 0;
     display: flex;
@@ -95,18 +95,18 @@ nav {
 }
 
 nav li {
-    width: 50px;
+    width: 1.388888rem;
     height: 100%;
-    line-height: 45px;
+    line-height: 1.25rem;
     text-align: center;
-    margin: 0 10px;
+    margin: 0 0.277777rem;
 }
 
 nav li a {
     display: block;
-    width: 50px;
+    width: 1.388888rem;
     height: 100%;
-    font-size: 18px;
+    font-size: 0.5rem;
 }
 
 nav li .active {
@@ -114,8 +114,8 @@ nav li .active {
 }
 
 nav .addDiv {
-    width: 45px;
-    height: 45px;
+    width: 1.25rem;
+    height: 1.25rem;
     position: fixed;
     right: 0;
     background: rgba(244, 245, 246, 0.9);
@@ -135,7 +135,7 @@ nav .addDiv .addBtn {
     width: 100%;
     text-align: center;
     position: relative;
-    top: 70px;
+    top: 1.944444rem;
 }
 
 /*主要内容部分*/
@@ -146,7 +146,7 @@ nav .addDiv .addBtn {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 50px;
+    bottom: 1.388888rem;
     overflow: auto;
 }
 
@@ -159,14 +159,24 @@ nav .addDiv .addBtn {
     right: 0;
 }
 
+/*
+ion-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+}
+*/
+
 main {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 95px;
+    top: 2.638888rem;
     left: 0;
     right: 0;
-    bottom: 50px;
+    bottom: 1.388888rem;
     overflow: auto;
 }
 
@@ -175,7 +185,7 @@ main .refreshFlag {
     background: rgba(135, 206, 250, 0.7);
     text-align: center;
     position: fixed;
-    top: 95px;
+    top: 2.638888rem;
     left: 0;
     right: 0;
 }
@@ -185,8 +195,8 @@ main .refreshFlag .refreshDesc {
 }
 
 main .has_action {
-    margin: 0 15px;
-    padding: 15px 0;
+    margin: 0 0.416666rem;
+    padding: 0.416666rem 0;
     border-bottom: 1px solid #eee;
 }
 
@@ -196,21 +206,22 @@ main .middle-model .article_link {
 }
 
 .item_detail .title {
-    font-size: 18px;
+    font-size: 0.5rem;
     color: #444;
     font-weight: normal;
 }
 
 .item_detail .list_img_item {
-    margin-right: 5px;
+    margin-right: 0.138888rem;
 }
 
 .item_detail .item_info {
-    margin-top: 5px;
+    margin-top: 0.138888rem;
 }
 
 .item_detail .item_info > span {
     color: #999;
+    font-size: 0.333333rem;
 }
 
 main .article_link {
@@ -219,7 +230,7 @@ main .article_link {
 
 main .has_action .img_list {
     display: flex;
-    margin-top: 5px;
+    margin-top: 0.138888rem;
 }
 
 /*

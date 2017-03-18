@@ -5,8 +5,8 @@ body {
 /*头部标题栏*/
 header {
     width: 100%;
-    height: 50px;
-    line-height: 50px;
+    height: 1.388888rem;
+    line-height: 1.388888rem;
     background: #f7f7f7;
     position: fixed;
     top: 0;
@@ -17,14 +17,14 @@ header {
 
 header .icon-iconcha {
     position: absolute;
-    right: 10px;
+    right: 0.277777rem;
 }
 
 /*主题内容*/
 main {
     width: 100%;
     position: absolute;
-    top: 50px;
+    top: 1.388888rem;
     left: 0;
     right: 0;
 }
@@ -34,31 +34,31 @@ main .addcontrol {
 }
 
 main .controlTitle {
-    font-size: 12px;
+    font-size: 0.333333rem;
     color: #666;
-    padding: 0 10px;
+    padding: 0 0.277777rem;
 }
 
 main .controlList {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    padding-left: 10px;
+    padding-left: 0.277777rem;
 }
 
 main .controlList li {
     width: 20%;
     text-align: center;
     border: 1px solid #eee;
-    margin-top: 10px;
+    margin-top: 0.277777rem;
     background: #ffffff;
-    padding:5px 0;
+    padding:0.138888rem 0;
 }
 main .controlList .fixed{
     color: red;
 }
 main .controlList li:not(:nth-of-type(4n)){
-    margin-right: 18px;
+    margin-right: 0.5rem;
 }
 
 main .controlList li a {
@@ -68,5 +68,5 @@ main .controlList li a {
 }
 
 main .add {
-    margin-top: 20px;
+    margin-top: 0.555555rem;
 }

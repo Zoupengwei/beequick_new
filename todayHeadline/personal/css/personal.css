@@ -5,55 +5,55 @@ body {
 /*顶部登录区域*/
 header {
     width: 100%;
-    height: 170px;
+    height: 4.722222rem;
     background: rgba(0, 0, 0, 0.8);
     text-align: center;
 }
 
 header .login {
     width: 100%;
-    height: 50px;
+    height: 1.388888rem;
     display: flex;
     justify-content: space-around;
-    padding-top: 55px;
+    padding-top: 1.527777rem;
 }
 
 header .login > a:not(:nth-last-of-type(1)) {
     display: block;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
+    width: 1.666666rem;
+    height: 1.666666rem;
+    line-height: 1.666666rem;
     background: #ffffff;
     border-radius: 50%;
     text-align: center;
-    margin-left: 35px;
+    margin-left: 0.972222rem;
 }
 
 header .right {
-    line-height: 55px;
+    line-height: 1.527777rem;
     color: #eee;
-    font-size: 22px;
+    font-size: 0.611111rem;
     /*margin-left: 10px;*/
 }
 
 header .icon-shouji {
-    font-size: 32px;
+    font-size: 0.888888rem;
     color: #D43D3D;
 }
 
 header .icon-weixin {
-    font-size: 36px;
+    font-size: 1rem;
     color: #2BAD13;
 }
 
 header .icon-qq-color {
-    font-size: 36px;
+    font-size: 1rem;
     color: #388BFF;
 }
 
 header p {
-    margin-top: 30px;
-    font-size: 13px;
+    margin-top: 0.833333rem;
+    font-size: 0.361111rem;
     color: #eee;;
 }
 
@@ -66,7 +66,7 @@ main {
 /*收藏栏*/
 main .gongneng {
     width: 100%;
-    height: 60px;
+    height: 1.666666rem;
     background: #fff;
     display: flex;
     justify-content: space-around;
@@ -79,13 +79,13 @@ main .gongneng span {
 main .gongneng > a {
     display: block;
     width: 33.4%;
-    font-size: 13px;
+    font-size: 0.361111rem;
     text-align: center;
 }
 
 main .gongneng .iconfont {
-    padding-top: 5px;
-    font-size: 28px;
+    padding-top: 0.138888rem;
+    font-size: 0.777777rem;
 }
 
 main .gongneng .icon-shoucang {
@@ -104,31 +104,32 @@ main .gongneng .icon-yejianmoshi {
 main .message {
     display: block;
     width: 100%;
-    height: 50px;
-    line-height: 50px;
+    height: 1.388888rem;
+    line-height: 1.388888rem;
     background: #ffffff;
     display: flex;
-    padding: 0 10px;
-    margin-top: 15px;
+    padding: 0 0.277777rem;
+    margin-top: 0.416666rem;
 }
 
 main .message .left {
     width: 90%;
+    font-size: 0.361111rem;
 }
 
 /*头条商城部分*/
 main .mall, .setting {
     width: 100%;
     background: #ffffff;
-    margin-top: 15px;
-    padding: 0 10px;
+    margin-top: 0.416666rem;
+    padding: 0 0.277777rem;
 }
 
 main .mall > a, main .setting > a {
     display: block;
     width: 100%;
-    height: 50px;
-    line-height: 50px;
+    height: 1.388888rem;
+    line-height: 1.388888rem;
     display: flex;
     border-bottom: 1px solid #eee;
 }
@@ -139,22 +140,25 @@ main .mall > a:nth-last-of-type(1), main .setting > a:nth-last-of-type(1) {
 
 main .mall .left {
     width: 40%;
+    font-size: 0.361111rem
 }
 
 main .mall .center {
     width: 50%;
-    font-size: 13px;
+    font-size: 0.361111rem;
     color: #999;
     text-align: right;
-    margin-right: 5px;
+    margin-right: 0.138888rem;
 }
 
 main .mall .right {
     width: 10%;
+    font-size: 0.361111rem;
 }
 
 main .setting .left {
     width: 90%;
+    font-size: 0.361111rem;
 }
 
 /*模态窗口*/
@@ -185,13 +189,13 @@ main .setting .left {
 
 .messageWindow .top .icon-iconcha {
     position: absolute;
-    right: 10px;
+    right: 0.277777rem;
 }
 
 .messageWindow .title {
     width: 100%;
     heigth: 25%;
-    padding: 10px 0;
+    padding: 0.277777rem 0;
     text-align: center;
 }
 
@@ -200,7 +204,7 @@ main .setting .left {
     height: 12%;
     display: flex;
     text-align: center;
-    margin: 20px auto;
+    margin: 0.555555rem auto;
 }
 
 .messageWindow .phoneLogin {
@@ -208,7 +212,7 @@ main .setting .left {
 }
 
 .messageWindow .phoneLogin .icon-shouji {
-    font-size: 24px;
+    font-size: 0.666666rem;
     color: #D43D3D;
 }
 
@@ -217,7 +221,7 @@ main .setting .left {
 }
 
 .messageWindow .weChatLogin .icon-weixin {
-    font-size: 24px;
+    font-size: 0.666666rem;
     color: #2BAD13;
 }
 
@@ -226,7 +230,7 @@ main .setting .left {
 }
 
 .messageWindow .QQLogin .icon-qq-color {
-    font-size: 24px;
+    font-size: 0.666666rem;
     color: #388BFF;
 }
 
@@ -253,7 +257,7 @@ main .setting .left {
     height: 100%;
     line-height: 3;
     text-align: center;
-    font-size: 14px;
+    font-size: 0.388888rem;
 }
 
 .messageWindow .more {

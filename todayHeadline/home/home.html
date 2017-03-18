@@ -6,7 +6,7 @@
         <a class="adBtn" href="javascript:;"></a>
     </div>
 
-    <div class="center">
+    <div class="center" ng-click="backTop()">
         <a class="title" href="javascript:;"></a>
         <a ng-click="refresh()" class="refreshBtn" href="javascript:;"></a>
     </div>
@@ -40,7 +40,7 @@
 </ion-tabs>
 
 <!--主要内容-->
-<ion-content class="has-header has-subheader has-footer">
+<ion-content>
 
     <ion-refresher class="downRefresh" pulling-text="下拉刷新" on-refresh="downRefresh()">
         <!--<section class="has_action middle-model">

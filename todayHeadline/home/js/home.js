@@ -47,6 +47,9 @@ app.controller("homeCtrl", ["$scope", "$http", "$interval", "$ionicTabsDelegate"
                 $scope.data = req.result.data;
                 console.log($scope.data);
 
+                //回到顶部
+                $("main").scrollTop(0);
+
                 //成功后停掉动画
                 $('.refreshBtn').css('animation', '');
 
@@ -79,13 +82,21 @@ app.controller("homeCtrl", ["$scope", "$http", "$interval", "$ionicTabsDelegate"
     $scope.downRefresh = function () {
         console.log($("main").scrollTop());
         $scope.refresh();
-        if ($("main").scrollTop() > 500) {
-            delete $("ion-refresher");
-        } else {
-            // $("ion-refresher").removeClass("downRefresh");
-        }
-        return;
     }
+
+    //双击回顶部并刷新
+    $scope.backTop = function () {
+        console.log("双击刷新回顶部")
+        $scope.refresh();
+        $("main").scrollTop(0);
+    }
+
+    /* $("header .center").on('dblclick',function () {
+     $scope.refresh();
+     console.log(777)
+     $("main").scrollTop(0);
+     })
+     */
 
     //顶部双击刷新
     $("header .center").on('dblclick', (function () {

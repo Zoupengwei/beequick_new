@@ -5,7 +5,7 @@ body {
 /*头部标题栏*/
 header {
     width: 100%;
-    height: 50px;
+    height: 1.388888rem;
     background: #ffffff;
     border-bottom: 1px solid #eee;
     display: flex;
@@ -14,36 +14,36 @@ header {
 header .left {
     width: 10%;
     text-align: center;
-    line-height: 50px;
+    line-height: 1.388888rem;
 }
 
 header .left .icon-xiangzuo {
-    font-size: 20px;
+    font-size: 0.555555rem;
 }
 
 header .center {
     width: 55%;
-    line-height: 50px;
+    line-height: 1.388888rem;
     text-align: right;
-    font-size: 20px;
+    font-size: 0.555555rem;
 }
 
 header .right {
     width: 35%;
-    line-height: 50px;
+    line-height: 1.388888rem;
     text-align: right;
-    padding-right:10px;
+    padding-right:0.277777rem;
 }
 
 header .right a {
-    font-size: 16px;
+    font-size: 0.444444rem;
 }
 
 /*头条活动轮播图*/
 .banner {
     width: 100%;
-    height: 70px;
-    line-height: 70px;
+    height: 1.944444rem;
+    line-height: 1.944444rem;
     background: #ffffff;
     display: flex;
 }
@@ -51,26 +51,29 @@ header .right a {
 .banner .left {
     width:33%;
     height: 50%;
-    line-height: 35px;
+    line-height: 0.972222rem;
     margin: auto 0;
     border-right: 1px solid #eeeeee;
 }
 
 .banner .left .toutiao {
-    padding-left: 15px;
-    font-size: 20px;
+    padding-left: 0.416666rem;
+    font-size: 0.555555rem;
     font-weight: bold;
 }
 
 .banner .left .huodong {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 0.555555rem;
     color: red;
 }
 
 .banner .right {
-    margin-left: 10px;
+    margin-left: 0.277777rem;
     overflow: hidden;
+}
+.banner .right .swiper-slide{
+	font-size: 0.361111rem;
 }
 
 /*主题内容部分*/
@@ -78,7 +81,7 @@ main {
     width: 100%;
     height: 78.5%;
     position: absolute;
-    margin-top: 15px;
+    margin-top: 0.416666rem;
     background: #ffffff;
 }
 
@@ -90,7 +93,7 @@ main ul {
 
 main ul li {
     width: 33.1%;
-    height: 100px;
+    height: 2.777777rem;
     background: #ffffff;
     text-align: center;
     border-bottom: 1px solid #cccccc;
@@ -101,13 +104,13 @@ main ul li:not(:nth-of-type(3n)) {
 }
 
 main ul li a {
-    font-size: 13px;
+    font-size: 0.361111rem;
 }
 
 main ul li .iconfont {
-    font-size: 36px;
+    font-size: 1rem;
     display: block;
-    padding-top: 20px;
+    padding-top: 0.555555rem;
 }
 
 main ul li .icon-temaishixin {

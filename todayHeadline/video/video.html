@@ -16,6 +16,7 @@
 
 <ion-content class="has-header has-subheader has-footer">
     <ion-refresher class="downRefresh" pulling-text="下拉刷新" on-refresh="refresh()"></ion-refresher>
+
     <main>
         <div ng-if="isRefresh" class="refreshFlag">
             <span class="refreshDesc">{{refreshStr}}</span>
@@ -26,12 +27,12 @@
                 <div class="videoWrap">
                     <p class="title">{{item.title}}</p>
 
-                    <video poster="{{item.pic}}" src="">浏览器不支持</video>
-
+                    <!--<video poster="{{item.pic}}">浏览器不支持</video>-->
+                    <img id="videoImg" ng-src="{{item.pic}}">
+                    
                     <p class="videoInfo">
                         <span class="author">
-                            <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=950162565,3259577602&fm=21&gp=0.jpg"
-                                 alt="">
+                            <img ng-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=950162565,3259577602&fm=21&gp=0.jpg">
                             视频作者
                         </span>
                         <span class="playCount">{{item.watchCount}}次播放</span>
@@ -42,11 +43,9 @@
             </ion-item>
         </ion-list>
 
-        <!--隐藏 DIV: <input type="checkbox" ng-model="myCheck">-->
     </main>
 
 </ion-content>
-
 
 <div ng-hide="isCheck" class="shareDiv">
     <div class="top">

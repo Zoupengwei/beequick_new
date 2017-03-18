@@ -20,7 +20,17 @@ ul, li, ol {
 
 html {
     font-family: STHeiti, Microsoft YaHei, Helvetica, Arial, sans-serif;
-    fontsize: 16px;
+    fontsize: 0.444444rem;  /*16px*/
+}
+
+/*body{
+	 -webkit-tap-highlight-color: rgba(0,0,0,0);
+}*/
+/*移动端a标签点击图片有阴影处理*/
+a{
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;	
 }
 
 img {

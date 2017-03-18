@@ -1,6 +1,7 @@
 /**
  * Created by 邹朋位 on 2017/3/10.
  */
+
 app.run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
         if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -11,7 +12,6 @@ app.run(function ($ionicPlatform) {
         }
     });
 });
-
 
 app.controller("videoCtrl", ["$scope", "$http", "$interval", function ($scope, $http, $interval) {
     $scope.videoData = [];
@@ -33,12 +33,12 @@ app.controller("videoCtrl", ["$scope", "$http", "$interval", function ($scope, $
         $scope.refresh();
     }
 
-
-
     //点击视频播放并设置
-    $("video").on('click', function () {
-        this.play();
-        this.setAttribute("controls", "controls");
+    angular.element("#videoImg").on('click', function () {
+        console.log(1111);
+        var $video = $("<video style='width: 100%;height: 80%;'></video>").setAttribute("controls", "controls").play();
+
+        $(this).parent().append($video);
     });
 
     //绑定菜单的显示与否,true代表隐藏
@@ -54,7 +54,7 @@ app.controller("videoCtrl", ["$scope", "$http", "$interval", function ($scope, $
         $http.get("./data/" + title + ".json")
             .success(function (req) {
                 $scope.videoData = req;
-                console.log(title);
+                // console.log(title);
                 console.log($scope.videoData);
 
                 $scope.isRefresh = true;
@@ -992,5 +992,4 @@ app.controller("videoCtrl", ["$scope", "$http", "$interval", function ($scope, $
     })();
 }])
 
-// var animateApp = angular.module("animateApp",['ngAnimate']);
 
